@@ -1,7 +1,5 @@
 <template>
   <main>
-<!--    <font-awesome-icon icon="cloud" class="cloudLeft"></font-awesome-icon>-->
-<!--    <font-awesome-icon icon="cloud" class="cloudRight"></font-awesome-icon>-->
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
     <h2>Introduction</h2>
     <h2>Data</h2>
@@ -81,7 +79,6 @@ export default {
     return {}
   },
 
-
 }
 </script>
 
@@ -144,22 +141,18 @@ p > span {
   transform: scale(0.9);
 }
 
-.cloudLeft {
-  color: white;
-  transform: scale(1.4) translate3d(10px, 5px, 0);
-}
-
-.cloudRight {
-  color: white;
-  text-align: right;
-  transform: scale(1.4) translate(10px, 0px);
-}
-
 .graphicContainer {
   background-color: var(--chart-background);
   border-top: solid 1px var(--main-color);
   border-bottom: solid 1px var(--main-color);
   width: 80%;
+  box-shadow: none;
+  transition: box-shadow 0.5s;
+}
+
+.graphicContainer:hover {
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.8);
+  transition: box-shadow 0.3s;
 }
 
 </style>

@@ -19,7 +19,7 @@
       Click the points on the map to remove or add specific sites from the line chart. The start and end date inputs
       also allow the line chart to render different time period based on user interest.
     </p>
-    <AllSitesMapTimeSeries></AllSitesMapTimeSeries>
+    <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
 
     <h3>Should we always eliminate bad observations?</h3>
     <p>
@@ -37,7 +37,7 @@
       reported from the BONA and HEAL sites. The slider is programmed to go through five values:
       <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
     </p>
-    <SiteThreshold></SiteThreshold>
+    <SiteThreshold class="graphicContainer"></SiteThreshold>
 
     <h3>How do we use various sensor positions?</h3>
     <p>Use svg below for sensor depth animation</p>
@@ -92,7 +92,7 @@ main {
   background-color: #a0cbdb;
   --main-color: #002480;
   --main-width: 60%;
-  --chart-background: #9ac5d5;
+  --chart-background: #9dc5d5;
   /*--chart-background: #99c4d4;*/
 }
 
@@ -107,7 +107,7 @@ h1, h2, h3 {
 h1 {
   font-size: 1.75rem;
   text-align: center;
-  margin: 15px 0 10px 0;
+  margin: 1rem 0 0.6rem;
 }
 
 h2 {
@@ -138,4 +138,10 @@ p > span {
   font-size: 0.9rem;
 }
 
+.graphicContainer {
+  background-color: var(--chart-background);
+  border-top: solid 1px var(--main-color);
+  border-bottom: solid 1px var(--main-color);
+  width: 80%;
+}
 </style>

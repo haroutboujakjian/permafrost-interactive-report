@@ -104,11 +104,7 @@ export default {
 
 .AllSiteContainer {
   margin: 2rem auto;
-  width: 80%;
-  border-top: solid 1px var(--main-color);
-  border-bottom: solid 1px var(--main-color);
   padding: 3rem 1rem;
-  background-color: var(--chart-background);
 }
 
 .dateSelectionForm {

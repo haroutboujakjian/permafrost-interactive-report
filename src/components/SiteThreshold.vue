@@ -77,13 +77,10 @@ export default {
   align-self: center;
   display: flex;
   flex-direction: column;
-  width: 80%;
   height: 90vh;
   margin: 3rem 0;
   padding: 2rem 2rem;
-  background-color: var(--chart-background);
-  border-top: solid 1px var(--main-color);
-  border-bottom: solid 1px var(--main-color);
+
 }
 
 form {

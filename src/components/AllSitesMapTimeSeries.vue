@@ -10,11 +10,11 @@
     <BaseLegend class="legendContainer" :legend-data="siteIDColors"></BaseLegend>
 
     <div ref="chartsContainer" class="charts">
-      <LineChart :width="width/2" :height="height" :margin="margin"
+      <LineChart :width="width/2 + 20" :height="height" :margin="margin"
                  :plot-data="plotDataFilter" :x_key="'endWeek'" :xaxis-label="'ppm CO2'"
                  :colors="colors" :inactive-lines="inactiveSiteIDs">
       </LineChart>
-      <Choropleth :width="width/2" :height="height" :color-scale="colorScale"
+      <Choropleth :width="width/2 - 20" :height="height" :color-scale="colorScale"
                   :inactive-points="inactiveSiteIDs"
                   @click="addSiteID($event)">
       </Choropleth>
@@ -42,7 +42,7 @@ export default {
       plotDataMap: weekly_mean_of_means,
       width: null,
       height: null,
-      margin: {top: 20, bottom: 20, left: 50, right: 20},
+      margin: {top: 20, bottom: 20, left: 50, right: 10},
       colors: [
         '#FDE725FF', '#440154FF', '#39568CFF',
         '#1F968BFF', '#9355d0'
@@ -107,7 +107,8 @@ export default {
   width: 80%;
   border-top: solid 1px var(--main-color);
   border-bottom: solid 1px var(--main-color);
-  padding: 3rem 0;
+  padding: 3rem 1rem;
+  background-color: var(--chart-background);
 }
 
 .dateSelectionForm {

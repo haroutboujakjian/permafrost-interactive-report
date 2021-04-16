@@ -9,12 +9,12 @@
     <div ref="chartContainer" class="chartContainer">
       <h4>BONA Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.DEJU" :x_key="'date'"
-                 :width="width" :height="height/2 - 50" :margin="margin"
+                 :width="width" :height="height/2 - 65" :margin="margin"
                  :colors="[colors['DEJU']]">
       </LineChart>
       <h4>HEAL Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.HEAL" :x_key="'date'"
-                 :width="width" :height="height/2 - 50" :margin="margin"
+                 :width="width" :height="height/2 - 65" :margin="margin"
                  :colors="[colors['HEAL']]">
       </LineChart>
     </div>
@@ -77,16 +77,20 @@ export default {
   align-self: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   height: 90vh;
   margin: 3rem 0;
+  padding: 2rem 2rem;
+  background-color: var(--chart-background);
+  border-top: solid 1px var(--main-color);
+  border-bottom: solid 1px var(--main-color);
 }
 
 form {
   display: flex;
   flex-direction: column;
   height: 10%;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -100,7 +104,7 @@ form #threshold {
 }
 
 .chartContainer {
-  width: 80%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   display: flex;

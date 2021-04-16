@@ -92,6 +92,8 @@ main {
   background-color: #a0cbdb;
   --main-color: #002480;
   --main-width: 60%;
+  --chart-background: #9ac5d5;
+  /*--chart-background: #99c4d4;*/
 }
 
 h1, h2, h3 {

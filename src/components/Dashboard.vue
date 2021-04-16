@@ -1,5 +1,7 @@
 <template>
   <main>
+<!--    <font-awesome-icon icon="cloud" class="cloudLeft"></font-awesome-icon>-->
+<!--    <font-awesome-icon icon="cloud" class="cloudRight"></font-awesome-icon>-->
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
     <h2>Introduction</h2>
     <h2>Data</h2>
@@ -9,14 +11,14 @@
     <p>
       Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites in
       Alaska. The map shows the locations of each of the sites, and the line chart shows mean CO<sub>2</sub>
-      concentration level per week for
-      each site. Observing the line chart, there are some apparent trends when comparing soil CO<sub>2</sub>
+      concentration level per week for each site. Observing the line chart, there are some apparent trends when
+      comparing soil CO<sub>2</sub>
       concentration levels at each site. The BARR site, which is at the top tip of Alaska, appears to have the highest
       spikes in soil CO<sub>2</sub> contratration. On the other hand, the 3 sites clustered in the middle of Alaska,
-      Bona,
-      Deju, and Heal, have similar soil CO<sub>2</sub> concentration trends without the large peaks. Both the map and
-      the line chart are interactive.
-      Click the points on the map to remove or add specific sites from the line chart. The start and end date inputs
+      Bona, Deju, and Heal, have similar soil CO<sub>2</sub> concentration trends without the large peaks. Both the map
+      and the line chart are interactive. Click
+      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
+      the points on the map to remove or add specific sites from the line chart. The start and end date inputs
       also allow the line chart to render different time period based on user interest.
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
@@ -138,10 +140,26 @@ p > span {
   font-size: 0.9rem;
 }
 
+.faIcon {
+  transform: scale(0.9);
+}
+
+.cloudLeft {
+  color: white;
+  transform: scale(1.4) translate3d(10px, 5px, 0);
+}
+
+.cloudRight {
+  color: white;
+  text-align: right;
+  transform: scale(1.4) translate(10px, 0px);
+}
+
 .graphicContainer {
   background-color: var(--chart-background);
   border-top: solid 1px var(--main-color);
   border-bottom: solid 1px var(--main-color);
   width: 80%;
 }
+
 </style>

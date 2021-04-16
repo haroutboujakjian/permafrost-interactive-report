@@ -105,12 +105,14 @@ export default {
 .AllSiteContainer {
   margin: 2rem auto;
   width: 80%;
+  border-top: solid 1px var(--main-color);
+  border-bottom: solid 1px var(--main-color);
+  padding: 3rem 0;
 }
 
 .dateSelectionForm {
-  margin: 30px 0 10px;
-  border-top: solid 1px var(--main-color);
-  padding: 20px 0 5px;
+  margin-bottom: 1rem;
+  padding: 0.1rem 0 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +148,6 @@ export default {
   align-self: center;
   display: flex;
   height: 450px;
-  border-bottom: solid 1px var(--main-color);
 }
 
 </style>

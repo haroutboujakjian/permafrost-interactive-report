@@ -1,8 +1,10 @@
 <template>
   <div class="verticalPositionSection">
     <form>
-      <label for="threshold">Threshold: {{ thresholdEnum[thresholdValue] }}</label>
-      <input type="range" id="threshold" min="1" max="5" step="1" v-model.number="thresholdValue">
+      <label for="threshold">Threshold: {{ thresholdValue }}</label>
+      <vue-slider id="threshold" v-model="thresholdValue" :data="thresholdData"
+                  :marks="true" :absorb="true" :contained="true">
+      </vue-slider>
     </form>
     <div ref="chartContainer" class="chartContainer">
       <h4>BONA Mean CO<sub>2</sub></h4>
@@ -33,16 +35,15 @@ export default {
       plotData: co2_by_threshold_two_sensors,
       colors: {"BONA": '#440154FF', "DEJU": '#39568CFF', "HEAL": '#1F968BFF'},
       margin: {top: 20, bottom: 20, left: 50, right: 5},
-      thresholdEnum: {1: 500, 2: 400, 3: 200, 4: 16, 5: 3},
-      thresholdValue: 1,
+      thresholdData: [500, 400, 200, 16, 3],
+      thresholdValue: 500,
       width: null,
       height: null,
     }
   },
   computed: {
     plotDataSites() {
-      const threshold = this.thresholdEnum[this.thresholdValue]
-      const filteredByThreshold = this.plotData.filter(row => row.thresh === threshold)
+      const filteredByThreshold = this.plotData.filter(row => row.thresh === this.thresholdValue)
 
       const DEJU = filteredByThreshold
           .filter(row => row.site === "DEJU")
@@ -78,18 +79,24 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 90vh;
+  margin: 3rem 0;
 }
 
 form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   height: 10%;
   width: 80%;
   margin: 0 auto;
 }
 
-form .siteCheckboxes > label {
-  margin: 0 1rem 0 0.3rem;
+form > label {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+form #threshold {
+  width: 20rem !important;
 }
 
 .chartContainer {

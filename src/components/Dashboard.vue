@@ -6,7 +6,7 @@
     <p>Include description and maybe snippet of data in table</p>
     <h2>Data Preprocessing</h2>
     <h3>How we selected the BONA, DEJU, and HEAL sites?</h3>
-    <p class="intro">
+    <p>
       Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites in
       Alaska. The map shows the locations of each of the sites, and the line chart shows mean CO<sub>2</sub>
       concentration level per week for
@@ -28,13 +28,14 @@
       but perhaps the quality of the observation cannot be trusted. More detailed information on understanding the
       overall quality of each NEON instrumented systems data product using <span>finalQF</span> can be found in
       <a href="https://data.neonscience.org/api/v0/documents/NEON.DOC.001113vB"
-         rel="noreferrer noopener" target="_blank">
-      NEON.DOC.001113 document</a> attached in any data download. In some cases, observations that do not
+         rel="noreferrer noopener" target="_blank">NEON.DOC.001113 document</a>
+      attached in any data download. In some cases, observations that do not
       pass the quality check appear very different from data that does pass the quality field.
     </p>
     <p>
       In the interactive plots below, we have added a threshold slider to show the effect the finalQF has on the data
-      reported from the BONA and HEAL sites. The slider is programmed to go through five values: 500, 400, 200, 16, 3.
+      reported from the BONA and HEAL sites. The slider is programmed to go through five values:
+      <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
     </p>
     <SiteThreshold></SiteThreshold>
 

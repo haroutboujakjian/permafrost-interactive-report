@@ -129,7 +129,7 @@ main {
   padding-bottom: 100px;
   background-color: #a0cbdb;
   --main-color: #002480;
-  --main-width: 60%;
+  --main-width: 65%;
   --chart-background: #9dc5d5;
   /*--chart-background: #99c4d4;*/
 }

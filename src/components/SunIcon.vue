@@ -26,7 +26,7 @@ export default {
 <style scoped>
 #sunPoints {
   fill: #facb2b;
-  animation: rotateSun 3s linear;
+  animation: rotateSun 4s linear;
   transform-origin: 50% 50%;
 }
 

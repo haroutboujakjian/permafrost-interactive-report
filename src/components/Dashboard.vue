@@ -2,6 +2,7 @@
   <main>
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
     <h2>Introduction</h2>
+    <p>Include short intro and picture of what permafrost is and isn't</p>
     <h2>Data</h2>
     <p>Include description and maybe snippet of data in table</p>
     <h2>Data Preprocessing</h2>
@@ -11,13 +12,21 @@
       Alaska. The map shows the locations of each of the sites, and the line chart shows mean CO<sub>2</sub>
       concentration level per week for each site. Observing the line chart, there are some apparent trends when
       comparing soil CO<sub>2</sub>
-      concentration levels at each site. The BARR site, which is at the top tip of Alaska, appears to have the highest
-      spikes in soil CO<sub>2</sub> contratration. On the other hand, the 3 sites clustered in the middle of Alaska,
-      Bona, Deju, and Heal, have similar soil CO<sub>2</sub> concentration trends without the large peaks. Both the map
-      and the line chart are interactive. Click
-      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
-      the points on the map to remove or add specific sites from the line chart. The start and end date inputs
-      also allow the line chart to render different time period based on user interest.
+      concentration levels at each site.
+    </p>
+    <p>
+      The BARR site is the NEON Program's northernmost field site near Utqiaġvik, Alaska (which used to known as
+      Barrow). It appears to have the highest spikes in soil CO<sub>2</sub>
+      contratration. The NEON group describes the climate at the BARR sites as having
+      "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic Ocean; and extreme seasonal
+      variation."<sup><a href="https://www.neonscience.org/field-sites/barr" target="_blank">[1]</a></sup>
+      This may explain the large spikes in Soil CO<sub>2</sub>.
+      Both the BARR and TOOL sites are in the NEON Tundra Domain (D18).
+      On the other hand, the 3 sites clustered in the middle of Alaska, Bona, Deju, and Heal, have similar soil
+      CO<sub>2</sub> concentration trends without the large peaks and don't have gaps of missing data as large as the
+      tundra sites. Click <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
+      the points on the map to select/deselect specific sites from the line chart, and use the start and end date inputs
+      to render different time durations.
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
 
@@ -104,13 +113,13 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   text-align: center;
   margin: 1rem 0 0.6rem;
 }
 
 h2 {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   margin: 2rem 0 0.5rem;
 }
 

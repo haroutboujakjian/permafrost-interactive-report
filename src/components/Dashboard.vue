@@ -185,6 +185,7 @@ small {
   width: var(--main-width);
   margin: -0.6rem auto 0;
   font-size: 0.8rem;
+  font-style: italic;
 }
 
 figure {
@@ -198,5 +199,6 @@ figure img {
 
 figcaption {
   font-size: 0.8rem;
+  font-style: italic;
 }
 </style>

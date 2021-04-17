@@ -2,6 +2,14 @@
   <main>
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
     <h2>Introduction</h2>
+    <h3>What is Permafrost?</h3>
+    <figure>
+      <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
+      <figcaption>
+        Figure 1: The active layer freezes and melts based on the season while the permafrost below it stays frozen
+        all year long.
+      </figcaption>
+    </figure>
     <p>Include short intro and picture of what permafrost is and isn't</p>
     <h2>Data</h2>
     <p>Include description and maybe snippet of data in table</p>
@@ -23,16 +31,16 @@
       This may explain the large spikes in Soil CO<sub>2</sub>.
       Both the BARR and TOOL sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the border of the
       taiga and tundra lines. Climate at the TOOL site is also described similarly as BARR, but the Soil CO<sub>2</sub>
-      does not have outlier quite as large.
+      does not have outliers quite as large.
     </p>
     <p>
-      On the other hand, the 3 sites clustered in the middle of Alaska, Bona, Deju, and Heal, have similar soil
+      On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, have similar soil
       CO<sub>2</sub> concentration trends without the large peaks and don't have gaps of missing data as large as the
       tundra sites.
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
     <small>
-      Figure 1: Click
+      Figure 2: Click
       <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
       the points on the map to select/deselect specific sites from the line chart, and use the start and end date inputs
       to render different time durations.
@@ -55,6 +63,7 @@
       <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
     </p>
     <SiteThreshold class="graphicContainer"></SiteThreshold>
+    <small>Figure 3:</small>
 
     <h3>How do we use various sensor positions?</h3>
     <p>Use svg below for sensor depth animation</p>
@@ -174,7 +183,20 @@ p > span {
 
 small {
   width: var(--main-width);
-  margin: -0.5rem auto 0;
+  margin: -0.6rem auto 0;
+  font-size: 0.8rem;
+}
+
+figure {
+  width: var(--main-width);
+  margin: 0 auto;
+}
+
+figure img {
+  width: clamp(450px, 80%, 680px);
+}
+
+figcaption {
   font-size: 0.8rem;
 }
 </style>

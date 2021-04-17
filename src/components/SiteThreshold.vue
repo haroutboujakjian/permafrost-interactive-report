@@ -78,7 +78,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 90vh;
-  margin: 3rem 0;
+  margin: 3rem 0 2rem;
   padding: 2rem 2rem;
 }
 

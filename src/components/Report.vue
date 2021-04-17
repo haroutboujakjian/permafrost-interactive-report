@@ -3,7 +3,12 @@
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
 
     <h2>What is Permafrost?</h2>
-    <p>Include short intro and picture of what permafrost is and isn't</p>
+    <p>
+      Understanding the melting of permafrost helps in piecing together the larger global climate change issue.
+      Permafrost is defined as the sublayer of soil that remains below 0&#730;C for two or more years. Figure 1
+      depicts what permafrost commonly looks like, as well as showing the active layer. This layer above permafrost
+      is the normal soil which melts and freezes based on the season.
+    </p>
     <figure>
       <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
       <figcaption>
@@ -100,7 +105,7 @@ import SiteThreshold from "@/components/SiteThreshold";
 import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
 
 export default {
-  name: "Dashboard",
+  name: "Report",
   components: {
     GrassSoil,
     SiteThreshold,
@@ -151,7 +156,7 @@ h3 {
 }
 
 p {
-  width: var(--main-width);
+  width: clamp(250px, var(--main-width), 900px);
   color: #3e3e3e;
   align-self: center;
   font-size: 0.95rem;
@@ -195,7 +200,7 @@ small {
 
 figure {
   width: var(--main-width);
-  margin: 0 auto;
+  margin: 1rem auto 0;
   display: flex;
   flex-direction: column;
 }

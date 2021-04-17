@@ -1,16 +1,16 @@
 <template>
   <body id="app">
-  <Dashboard></Dashboard>
+  <Report/>
   </body>
 </template>
 
 <script>
-import Dashboard from "@/components/Dashboard";
+import Report from "@/components/Report";
 
 export default {
   name: 'App',
   components: {
-    Dashboard
+    Report
   }
 }
 </script>

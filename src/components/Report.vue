@@ -1,5 +1,6 @@
 <template>
   <main>
+    <SunIcon/>
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
 
     <h2>What is Permafrost?</h2>
@@ -103,13 +104,15 @@
 import GrassSoil from "@/components/GrassSoil";
 import SiteThreshold from "@/components/SiteThreshold";
 import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
+import SunIcon from "@/components/SunIcon";
 
 export default {
   name: "Report",
   components: {
     GrassSoil,
     SiteThreshold,
-    AllSitesMapTimeSeries
+    AllSitesMapTimeSeries,
+    SunIcon
   },
   data() {
     return {}
@@ -142,7 +145,7 @@ h1, h2, h3 {
 h1 {
   font-size: 1.8rem;
   text-align: center;
-  margin: 1rem 0 0.6rem;
+  margin: 0.25rem 0 0.6rem;
 }
 
 h2 {

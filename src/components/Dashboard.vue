@@ -15,20 +15,28 @@
       concentration levels at each site.
     </p>
     <p>
-      The BARR site is the NEON Program's northernmost field site near Utqiaġvik, Alaska (which used to known as
+      The BARR site is the NEON Program's northernmost field site near Utqiaġvik, Alaska (which used to be known as
       Barrow). It appears to have the highest spikes in soil CO<sub>2</sub>
-      contratration. The NEON group describes the climate at the BARR sites as having
+      concentration. The NEON group describes the climate at the BARR sites as having
       "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic Ocean; and extreme seasonal
       variation."<sup><a href="https://www.neonscience.org/field-sites/barr" target="_blank">[1]</a></sup>
       This may explain the large spikes in Soil CO<sub>2</sub>.
-      Both the BARR and TOOL sites are in the NEON Tundra Domain (D18).
+      Both the BARR and TOOL sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the border of the
+      taiga and tundra lines. Climate at the TOOL site is also described similarly as BARR, but the Soil CO<sub>2</sub>
+      does not have outlier quite as large.
+    </p>
+    <p>
       On the other hand, the 3 sites clustered in the middle of Alaska, Bona, Deju, and Heal, have similar soil
       CO<sub>2</sub> concentration trends without the large peaks and don't have gaps of missing data as large as the
-      tundra sites. Click <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
-      the points on the map to select/deselect specific sites from the line chart, and use the start and end date inputs
-      to render different time durations.
+      tundra sites.
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
+    <small>
+      Figure 1: Click
+      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
+      the points on the map to select/deselect specific sites from the line chart, and use the start and end date inputs
+      to render different time durations.
+    </small>
 
     <h3>Should we always eliminate bad observations?</h3>
     <p>
@@ -164,4 +172,9 @@ p > span {
   transition: box-shadow 0.3s;
 }
 
+small {
+  width: var(--main-width);
+  margin: -0.5rem auto 0;
+  font-size: 0.8rem;
+}
 </style>

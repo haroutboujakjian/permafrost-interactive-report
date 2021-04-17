@@ -1,8 +1,9 @@
 <template>
   <main>
     <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
-    <h2>Introduction</h2>
-    <h3>What is Permafrost?</h3>
+
+    <h2>What is Permafrost?</h2>
+    <p>Include short intro and picture of what permafrost is and isn't</p>
     <figure>
       <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
       <figcaption>
@@ -10,10 +11,12 @@
         all year long.
       </figcaption>
     </figure>
-    <p>Include short intro and picture of what permafrost is and isn't</p>
+
     <h2>Data</h2>
+
     <p>Include description and maybe snippet of data in table</p>
     <h2>Data Preprocessing</h2>
+
     <h3>How we selected the BONA, DEJU, and HEAL sites?</h3>
     <p>
       Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites in
@@ -73,6 +76,7 @@
 
     <h3>How do we re-index to the best time scale?</h3>
     <p>Fill in</p>
+
     <h3>How do we account for seasonality and trend?</h3>
     <p>Fill in</p>
 
@@ -80,6 +84,7 @@
 
     <h3>Why does multiple linear regression fall short?</h3>
     <p>Fill in</p>
+
     <h3>How do we account for autocorrelation?</h3>
     <p>Fill in</p>
 
@@ -191,14 +196,18 @@ small {
 figure {
   width: var(--main-width);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 figure img {
   width: clamp(450px, 80%, 680px);
+  align-self: center;
 }
 
 figcaption {
   font-size: 0.8rem;
   font-style: italic;
+  margin-top: 0.5rem;
 }
 </style>

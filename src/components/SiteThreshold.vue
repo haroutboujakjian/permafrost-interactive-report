@@ -10,12 +10,12 @@
       <h4>BONA Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.DEJU" :x_key="'date'"
                  :width="width" :height="height/2 - 65" :margin="margin"
-                 :colors="[colors['DEJU']]">
+                 :colors="[colors['DEJU']]" :y-axis-max="6000">
       </LineChart>
       <h4>HEAL Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.HEAL" :x_key="'date'"
                  :width="width" :height="height/2 - 65" :margin="margin"
-                 :colors="[colors['HEAL']]">
+                 :colors="[colors['HEAL']]" :y-axis-max="8500">
       </LineChart>
     </div>
   </div>
@@ -80,7 +80,6 @@ export default {
   height: 90vh;
   margin: 3rem 0;
   padding: 2rem 2rem;
-
 }
 
 form {

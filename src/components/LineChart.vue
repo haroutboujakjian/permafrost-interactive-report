@@ -61,7 +61,8 @@ export default {
         return []
       }
     },
-    xaxisLabel: String
+    xaxisLabel: String,
+    yAxisMax: Number,
   },
   data() {
     return {
@@ -96,8 +97,9 @@ export default {
           .nice()
     },
     yScale() {
+      const y_max = this.yAxisMax ? this.yAxisMax : this.max_y_value
       return scaleLinear()
-          .domain([0, this.max_y_value])
+          .domain([0, y_max])
           .range([this.height - this.margin.bottom, this.margin.top])
           .nice()
     },
@@ -152,7 +154,7 @@ export default {
 
 <style scoped>
 path {
-  stroke-width: 1.0;
+  stroke-width: 1.1;
   fill: transparent;
 }
 

@@ -19,8 +19,7 @@
       Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites in
       Alaska. The map shows the locations of each of the sites, and the line chart shows mean CO<sub>2</sub>
       concentration level per week for each site. Observing the line chart, there are some apparent trends when
-      comparing soil CO<sub>2</sub>
-      concentration levels at each site.
+      comparing soil CO<sub>2</sub> concentration levels at each site.
     </p>
     <p>
       The BARR site is the NEON Program's northernmost field site near Utqiaġvik, Alaska (which used to be known as
@@ -34,9 +33,10 @@
       does not have outliers quite as large.
     </p>
     <p>
-      On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, have similar soil
-      CO<sub>2</sub> concentration trends without the large peaks and don't have gaps of missing data as large as the
-      tundra sites.
+      On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, experience the same
+      typified cold winters and short summers, but without the extreme seasonal variation of the tundra sites. Observing
+      the line plot, the 3 central sites have similar soil CO<sub>2</sub> concentration trends without the large peaks
+      and don't have gaps of missing data as large as the tundra sites.
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
     <small>
@@ -54,8 +54,8 @@
       overall quality of each NEON instrumented systems data product using <span>finalQF</span> can be found in
       <a href="https://data.neonscience.org/api/v0/documents/NEON.DOC.001113vB"
          rel="noreferrer noopener" target="_blank">NEON.DOC.001113 document</a>
-      attached in any data download. In some cases, observations that do not
-      pass the quality check appear very different from data that does pass the quality field.
+      attached in any data download. In some cases, observations that do not pass the quality check appear very
+      different from data that does pass the quality field.
     </p>
     <p>
       In the interactive plots below, we have added a threshold slider to show the effect the finalQF has on the data

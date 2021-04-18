@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style>
+@import "~@fontsource/lato/";
 html, body {
   margin: 0;
   padding: 0;
@@ -24,7 +25,7 @@ html, body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

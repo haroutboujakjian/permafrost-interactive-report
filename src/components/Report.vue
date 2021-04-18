@@ -129,7 +129,7 @@ main {
   padding-bottom: 100px;
   background-color: #a0cbdb;
   --main-color: #002480;
-  --main-width: 65%;
+  --main-width: clamp(250px, 68%, 800px);
   --chart-background: #9dc5d5;
   /*--chart-background: #99c4d4;*/
 }
@@ -159,7 +159,7 @@ h3 {
 }
 
 p {
-  width: clamp(250px, var(--main-width), 900px);
+  width: var(--main-width);
   color: #3e3e3e;
   align-self: center;
   font-size: 0.95rem;

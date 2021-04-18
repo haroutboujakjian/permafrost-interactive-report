@@ -10,13 +10,13 @@
     <BaseLegend class="legendContainer" :legend-data="siteIDColors"></BaseLegend>
 
     <div ref="chartsContainer" class="charts">
-      <LineChart :width="width/2 + 20" :height="height" :margin="margin"
+      <LineChart :width="chartSizes.line.width" :height="chartSizes.line.height" :margin="margin"
                  :plot-data="plotDataFilter" :x_key="'endWeek'" :xaxis-label="'ppm CO2'"
                  :colors="colors" :inactive-lines="inactiveSiteIDs">
       </LineChart>
-      <Choropleth :width="width/2 - 20" :height="height" :color-scale="colorScale"
-                  :inactive-points="inactiveSiteIDs"
-                  @click="addSiteID($event)">
+      <Choropleth :width="chartSizes.map.width" :height="chartSizes.map.height" :color-scale="colorScale"
+                  :inactive-points="inactiveSiteIDs" @click="addSiteID($event)"
+                  class="map">
       </Choropleth>
     </div>
   </div>
@@ -42,6 +42,10 @@ export default {
       plotDataMap: weekly_mean_of_means,
       width: null,
       height: null,
+      chartSizes: {
+        map: {width: null, height: null},
+        line: {width: null, height: null},
+      },
       margin: {top: 20, bottom: 20, left: 50, right: 10},
       colors: [
         '#FDE725FF', '#440154FF', '#39568CFF',
@@ -86,8 +90,22 @@ export default {
       this.endDate = this.plotDataMap[this.plotDataMap.length - 1].endWeek
     },
     resizeWidth() {
-      this.width = this.$refs.chartsContainer.clientWidth - 1
-      this.height = this.$refs.chartsContainer.clientHeight - 1
+      const width = this.$refs.chartsContainer.clientWidth - 1
+      const height = this.$refs.chartsContainer.clientHeight - 1
+
+      if (window.innerWidth < 800) {
+        this.chartSizes.map.width = width - 20
+        this.chartSizes.line.width = width - 10
+
+        this.chartSizes.map.height = height / 2
+        this.chartSizes.line.height = height / 2
+      } else {
+        this.chartSizes.map.width = width / 2 - 20
+        this.chartSizes.line.width = width / 2 + 20
+
+        this.chartSizes.map.height = height - 10
+        this.chartSizes.line.height = height
+      }
     },
     addSiteID(siteID) {
       if (this.inactiveSiteIDs.includes(siteID)) {
@@ -145,6 +163,16 @@ export default {
   align-self: center;
   display: flex;
   height: 450px;
+}
+
+@media (max-width: 800px) {
+  .charts {
+    flex-direction: column;
+  }
+
+  .map {
+    margin-top: 1rem;
+  }
 }
 
 </style>

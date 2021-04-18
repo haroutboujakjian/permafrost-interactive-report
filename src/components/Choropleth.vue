@@ -42,7 +42,7 @@ export default {
   computed: {
     projection() {
       return geoAlbersUsa()
-          .fitExtent([[0, 0], [this.width, this.height]], this.alaska_border)
+          .fitExtent([[-80,10], [this.width, this.height]], this.alaska_border)
     },
     geopath() {
       return geoPath().projection(this.projection)

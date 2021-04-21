@@ -31,8 +31,8 @@
 
 <script>
 import {scaleTime, scaleLinear, scaleOrdinal} from 'd3-scale';
-import {line} from 'd3-shape';
-import {extent, max, min, bisector} from 'd3-array';
+import {line, area} from 'd3-shape';
+import {extent, max, bisector} from 'd3-array';
 import {axisLeft, axisBottom} from 'd3-axis';
 import {select} from 'd3-selection';
 // eslint-disable-next-line no-unused-vars
@@ -95,9 +95,6 @@ export default {
     max_y_value() {
       return max(this.y_values, d => max(d.values))
     },
-    min_y_value() {
-      return min(this.y_values, d => min(d.values))
-    },
     xScale() {
       return scaleTime()
           .domain(extent(this.plotData, d => new Date(d[this.x_key])))
@@ -107,7 +104,7 @@ export default {
     yScale() {
       const y_max = this.yAxisMax ? this.yAxisMax : this.max_y_value
       return scaleLinear()
-          .domain([this.min_y_value, y_max])
+          .domain([0, y_max])
           .range([this.height - this.margin.bottom, this.margin.top])
           .nice()
     },
@@ -115,10 +112,15 @@ export default {
       return scaleOrdinal().domain(this.object_keys).range(this.colors)
     },
     lineCalc() {
-      return line()
-          .x((d, i) => this.xScale(new Date(this.x_values[i])))
-          .y(d => this.yScale(d))
-          .defined(d => d !== 0)
+      return this.areaChart
+          ? area()
+              .x((d, i) => this.xScale(new Date(this.x_values[i])))
+              .y0(this.yScale(0))
+              .y1(d => this.yScale(d))
+          : line()
+              .x((d, i) => this.xScale(new Date(this.x_values[i])))
+              .y(d => this.yScale(d))
+              .defined(d => d !== 0)
     },
     xBisector() {
       return bisector(d => new Date(d[this.x_key])).left

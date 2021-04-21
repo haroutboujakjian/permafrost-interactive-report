@@ -10,12 +10,14 @@
       <h4>BONA Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.DEJU" :x_key="'date'"
                  :width="width" :height="height/2 - 65" :margin="margin"
-                 :colors="[colors['DEJU']]" :y-axis-max="6000">
+                 :colors="[colors['DEJU']]" :y-axis-max="6000"
+                 :area-chart="true">
       </LineChart>
       <h4>HEAL Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.HEAL" :x_key="'date'"
                  :width="width" :height="height/2 - 65" :margin="margin"
-                 :colors="[colors['HEAL']]" :y-axis-max="8500">
+                 :colors="[colors['HEAL']]" :y-axis-max="8500"
+                 :area-chart="true">
       </LineChart>
     </div>
   </div>

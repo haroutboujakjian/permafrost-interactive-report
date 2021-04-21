@@ -4,6 +4,7 @@
       <g @mousemove="populateTooltip($event)" @mouseleave="removeTooltip()">
         <path v-for="line in y_values" :key="line.name"
               :d="lineCalc(line.values)" :stroke="color(line.name)"
+              :fill="areaChart ? color(line.name) : 'transparent'"
               :class="{ visible: inactiveLines.includes(line.name)}">
           <title>{{ line.name }}</title>
         </path>
@@ -31,7 +32,7 @@
 <script>
 import {scaleTime, scaleLinear, scaleOrdinal} from 'd3-scale';
 import {line} from 'd3-shape';
-import {extent, max, bisector} from 'd3-array';
+import {extent, max, min, bisector} from 'd3-array';
 import {axisLeft, axisBottom} from 'd3-axis';
 import {select} from 'd3-selection';
 // eslint-disable-next-line no-unused-vars
@@ -63,6 +64,10 @@ export default {
     },
     xaxisLabel: String,
     yAxisMax: Number,
+    areaChart: {
+      type: Boolean,
+      default: false,
+    }
   },
   data() {
     return {
@@ -90,6 +95,9 @@ export default {
     max_y_value() {
       return max(this.y_values, d => max(d.values))
     },
+    min_y_value() {
+      return min(this.y_values, d => min(d.values))
+    },
     xScale() {
       return scaleTime()
           .domain(extent(this.plotData, d => new Date(d[this.x_key])))
@@ -99,7 +107,7 @@ export default {
     yScale() {
       const y_max = this.yAxisMax ? this.yAxisMax : this.max_y_value
       return scaleLinear()
-          .domain([0, y_max])
+          .domain([this.min_y_value, y_max])
           .range([this.height - this.margin.bottom, this.margin.top])
           .nice()
     },
@@ -155,7 +163,6 @@ export default {
 <style scoped>
 path {
   stroke-width: 1.1;
-  fill: transparent;
 }
 
 .tooltipContainer {

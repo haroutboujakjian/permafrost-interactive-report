@@ -20,7 +20,43 @@
 
     <h2>Data</h2>
 
-    <p>Include description, leveraged data sets, and maybe snippet of data in table</p>
+    <p>
+      The <a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a>
+      is a country-wide, open-source ecological data repository. Data
+      collection sites are located in the tropical forests of Hawaii, on both sides of the Rocky Mountains, in the
+      glades of Florida, and (notably for this work) in several permafrost locations in Alaska. Sites are either aquatic
+      or terrestrial. Sites are also designated as core or relocatable, meaning that they are fixed or move around a
+      small area over the 30-year data collection period. As much as possible, these different types of sites are
+      located near each other to examine how different types of substrates absorb nutrients and other molecules. The
+      primary mission of collecting NEON data is to support a “greater understanding of ecological change and enables
+      forecasting of future ecological conditions” (Battelle, 2021).
+    </p>
+
+    <h3>Description</h3>
+    <p>
+      The data repository is broken down into “Data Products”; these are individual (or sometimes groups of) features
+      that are collected across several sites. As of April 2021, there are
+      <a href="https://data.neonscience.org/data-products/explore" target="_blank">181 data products</a> spanning 81
+      sites, though at some of the Alaskan permafrost sites, there are over 100 different data products.
+    </p>
+
+    <p>
+      All of the data products report findings are aggregated over 1 minute or 30 minutes. When aggregating the values
+      from the sensors, they report the <span>minimum</span>, <span>mean</span>, <span>maximum</span>,
+      <span>variance</span>, <span>number of observations</span>, <span>expected uncertainty</span>,
+      <span>standard error of the mean</span>, and a <span>final quality</span> field over a collection interval. The
+      final quality field records if a sensor error occurred over a given interval. Depending on the data product,
+      this field can be very important to filter the data on. The <span>start time</span> and <span>end time</span>
+      of each aggregation are also recorded.
+    </p>
+
+    <h3>Leveraged Data Sets</h3>
+    <figure>
+      <DataProductsTable/>
+      <figcaption>Table 1: Data products used this analysis.</figcaption>
+    </figure>
+
+
 
     <h2>Data Preprocessing</h2>
 
@@ -107,7 +143,8 @@
       meaningfully different measurements, whereas different levels of horizontal position can provide replicates
       relative to one vertical position.
     </p>
-    <SensorDepths class="graphicContainer"></SensorDepths>
+    <SensorDepths id="figure4" class="graphicContainer"></SensorDepths>
+    <small>Figure 4: </small>
 
     <h3>How do we re-index to the best time scale?</h3>
     <p>Fill in</p>
@@ -151,6 +188,7 @@ import SiteThreshold from "@/components/SiteThreshold";
 import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
 import SensorDepths from "@/components/SensorDepths";
 import SunIcon from "@/components/SunIcon";
+import DataProductsTable from "@/components/DataProductsTable";
 
 export default {
   name: "Report",
@@ -158,7 +196,8 @@ export default {
     SiteThreshold,
     AllSitesMapTimeSeries,
     SensorDepths,
-    SunIcon
+    SunIcon,
+    DataProductsTable
   },
   data() {
     return {}
@@ -243,7 +282,7 @@ p > span {
 small {
   width: var(--main-width);
   margin: -0.6rem auto 0;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-style: italic;
 }
 
@@ -260,7 +299,7 @@ figure img {
 }
 
 figcaption {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-style: italic;
   margin-top: 0.5rem;
 }

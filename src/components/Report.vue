@@ -57,7 +57,6 @@
     </figure>
 
 
-
     <h2>Data Preprocessing</h2>
 
     <h3>How we selected the BONA, DEJU, and HEAL sites?</h3>
@@ -147,20 +146,28 @@
     <small>Figure 4: </small>
 
     <h3>How do we re-index to the best time scale?</h3>
-    <p>Fill in</p>
+    <p>
+      The regression and time-series models in the following section require data to reported at a given date or time.
+      This analysis focuses on changes to soil CO<sub>2</sub> content over a large time window, so it is rarely
+      necessary to perform analysis on the 1-minute or 30-minute intervals that are provided directly from NEON. Thus,
+      for much of the analysis this data is re-indexed into a daily rate, which also removes any seasonality derived
+      from the day to night cycle. In order to re-index to a single value for the day, a weighted mean of means is
+      calculated, which accounts for differences in number of observations seen in the reported measurements. Daily
+      minimum and maximum values are also created in the re-indexing, and a pooled variance is calculated, again relying
+      on the number of observations reported during each of the default time windows. While the work in this report
+      aggregates data to single days, this process could be reindexed to any time resolution. Filtering out observations
+      based on issues discussed in the previous paragraph should be done prior to a re-indexing step.
+    </p>
+
+    <p>
+      Another reason to consider re-indexing is for computational cost. Many of the visualizations in the interactive
+      report are designed to react in real-time, and they show insights into how decisions were made in preprocessing
+      and modeling. In some multiplot visualizations (Figure 2 and 4), a daily re-indexing can still produce too much
+      data to filter and replot in real-time. For these cases, a weekly index is used. Similar issues can occur with
+      more complex models, or if more covariates are added to models in the following section.
+    </p>
 
     <h2>Seasonality and Trend Analysis</h2>
-
-    <h3>Seasonal and Trend Composition using LOESS (STL)</h3>
-    <p>Fill in</p>
-
-    <h3>Interpolation of Missing Values</h3>
-    <p>Fill in</p>
-
-    <h3>Autoregressive Integrated Moving Average (ARIMA) Models</h3>
-    <p>Fill in</p>
-
-    <h3>Multiplicative versus Additive Models</h3>
     <p>Fill in</p>
 
     <h2>Regression Analysis</h2>

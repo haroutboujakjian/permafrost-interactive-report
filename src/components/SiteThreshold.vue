@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import co2_by_threshold_two_sensors from '@/data/co2_by_threshold_two_sensor_shortcol.json'
+import co2_by_threshold_two_sensors from '@/data/co2_by_threshold_two_sensor_shortcol_ints.json'
 import LineChart from "@/components/LineChart";
 
 export default {

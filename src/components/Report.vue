@@ -75,10 +75,7 @@
     <small>Figure 3:</small>
 
     <h3>How do we use various sensor positions?</h3>
-    <p>Use svg below for sensor depth animation</p>
-    <div>
-      <GrassSoil></GrassSoil>
-    </div>
+    <SensorDepths class="graphicContainer"></SensorDepths>
 
     <h3>How do we re-index to the best time scale?</h3>
     <p>Fill in</p>
@@ -101,17 +98,17 @@
 </template>
 
 <script>
-import GrassSoil from "@/components/GrassSoil";
 import SiteThreshold from "@/components/SiteThreshold";
 import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
+import SensorDepths from "@/components/SensorDepths";
 import SunIcon from "@/components/SunIcon";
 
 export default {
   name: "Report",
   components: {
-    GrassSoil,
     SiteThreshold,
     AllSitesMapTimeSeries,
+    SensorDepths,
     SunIcon
   },
   data() {

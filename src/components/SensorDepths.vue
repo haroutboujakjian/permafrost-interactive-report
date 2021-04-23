@@ -1,41 +1,46 @@
 <template>
-  <div class="sensorDepthsSection">
+  <section class="sensorDepthsSection">
+    <div class="legendContainer">
+      <BaseLegend :legend-data="legendData"></BaseLegend>
+    </div>
 
     <div class="sensorDepthsContainer">
+      <div class="depthColumn">
+        <h3>BONA</h3>
+        <h3>DEJU</h3>
+        <h3>HEAL</h3>
+      </div>
 
-      <h3>BONA</h3>
-      <div class="chartContainer" ref="chartContainer">
+      <div class="depthColumn" ref="sensorChartContainer">
         <LineChart :plot-data="sensor_depths_split.BONA" x_key="week"
-                   :width="width" :height="height" :margin="margin" :colors="color">
+                   :width="width" :height="height - 10" :margin="margin" :colors="color">
         </LineChart>
-      </div>
 
-      <h3>DEJU</h3>
-      <div class="chartContainer">
         <LineChart :plot-data="sensor_depths_split.DEJU" x_key="week"
-                   :width="width" :height="height" :margin="margin" :colors="color">
+                   :width="width" :height="height - 10" :margin="margin" :colors="color">
+        </LineChart>
+
+        <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
+                   :width="width" :height="height - 10" :margin="margin" :colors="color">
         </LineChart>
       </div>
 
-      <h3>HEAL</h3>
-      <div class="chartContainer">
-        <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
-                   :width="width" :height="height" :margin="margin" :colors="color">
-        </LineChart>
-      </div>
 
     </div>
-  </div>
+
+  </section>
 
 </template>
 
 <script>
 import weekly_sensor_depth_data from "@/data/weekly_co2_sensors_depth_3_sites.json"
 import LineChart from "@/components/LineChart";
+import BaseLegend from "@/components/BaseLegend";
 
 export default {
   name: "SensorDepths",
   components: {
+    BaseLegend,
     LineChart
   },
   data() {
@@ -60,6 +65,10 @@ export default {
           .map(({siteID, ...row}) => row)
 
       return {BONA, DEJU, HEAL}
+    },
+    legendData() {
+      const verPos = ["503", "502", "501"]
+      return this.color.map((color, i) => ({name: verPos[i], color}))
     }
   },
   mounted() {
@@ -71,8 +80,8 @@ export default {
   },
   methods: {
     resizeWidthAndHeight() {
-      this.width = this.$refs.chartContainer.clientWidth
-      this.height = this.$refs.chartContainer.clientHeight
+      this.width = this.$refs.sensorChartContainer.clientWidth - 1
+      this.height = (this.$refs.sensorChartContainer.clientHeight - 1)/ 3
     }
   }
 }
@@ -82,14 +91,41 @@ export default {
 .sensorDepthsSection {
   height: 90vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .sensorDepthsContainer {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-  align-items: center;
-  justify-items: center;
+  height: calc(100% - 2rem);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
+
+.legendContainer {
+  height: 2rem;
+}
+
+.depthColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.depthColumn:first-child {
+  width: 70px;
+}
+
+.depthColumn:last-child {
+  width: calc(100% - 70px);
+}
+
+h3 {
+  height: 33%;
+  display: flex;
+  align-items: center;
+}
+
 </style>

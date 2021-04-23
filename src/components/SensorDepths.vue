@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       sensor_depths: weekly_sensor_depth_data,
-      margin: {top: 15, bottom: 25, left: 50, right: 20},
+      margin: {top: 10, bottom: 25, left: 50, right: 20},
       color: ["#FFC6C6", "#FF5F5F", "#900101"],
       width: null,
       height: null,
@@ -130,21 +130,25 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .depthColumn:first-child {
-  width: 230px;
+  width: 270px;
+  padding-left: 30px;
 }
 
 .depthColumn:last-child {
-  width: calc(100% - 230px);
+  width: calc(100% - 270px);
 }
 
 h4 {
-  height: 33%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--main-color);
 }
 
 </style>

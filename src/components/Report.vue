@@ -20,7 +20,8 @@
 
     <h2>Data</h2>
 
-    <p>Include description and maybe snippet of data in table</p>
+    <p>Include description, leveraged data sets, and maybe snippet of data in table</p>
+
     <h2>Data Preprocessing</h2>
 
     <h3>How we selected the BONA, DEJU, and HEAL sites?</h3>
@@ -77,18 +78,41 @@
     <h3>How do we use various sensor positions?</h3>
     <SensorDepths class="graphicContainer"></SensorDepths>
 
+    <h3>What happens when a sensor is repositioned?</h3>
+    <p>Fill in</p>
+
+    <h3>How do we aggregate between sensors?</h3>
+    <p>Fill in</p>
+
     <h3>How do we re-index to the best time scale?</h3>
     <p>Fill in</p>
 
-    <h3>How do we account for seasonality and trend?</h3>
+    <h2>Seasonality and Trend Analysis</h2>
+
+    <h3>Seasonal and Trend Composition using LOESS (STL)</h3>
     <p>Fill in</p>
 
-    <h2>Statistical Methodologies</h2>
-
-    <h3>Why does multiple linear regression fall short?</h3>
+    <h3>Interpolation of Missing Values</h3>
     <p>Fill in</p>
 
-    <h3>How do we account for autocorrelation?</h3>
+    <h3>Autoregressive Integrated Moving Average (ARIMA) Models</h3>
+    <p>Fill in</p>
+
+    <h3>Multiplicative versus Additive Models</h3>
+    <p>Fill in</p>
+
+    <h2>Regression Analysis</h2>
+
+    <h3>Ordinary Least Squares Linear Regression</h3>
+    <p>Fill in</p>
+
+    <h3>Regression with ARIMA Errors</h3>
+    <p>Fill in</p>
+
+    <h3>Regression with Seasonal ARIMA Errors</h3>
+    <p>Fill in</p>
+
+    <h3>Modeling Seasonally Adjusted Data</h3>
     <p>Fill in</p>
 
     <h2>Conclusions</h2>
@@ -140,13 +164,13 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-align: center;
   margin: 0.25rem 0 0.6rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.60rem;
   margin: 2rem 0 0.5rem;
 }
 
@@ -159,7 +183,7 @@ p {
   width: var(--main-width);
   color: #3e3e3e;
   align-self: center;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   margin-top: 20px;
 }
 

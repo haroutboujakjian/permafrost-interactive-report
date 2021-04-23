@@ -13,15 +13,18 @@
 
       <div class="depthColumn" ref="sensorChartContainer">
         <LineChart :plot-data="sensor_depths_split.BONA" x_key="week"
-                   :width="width" :height="height - 10" :margin="margin" :colors="color">
+                   :width="width" :height="height - 10" :margin="margin" :colors="color"
+                   xaxis-label="soil CO2">
         </LineChart>
 
         <LineChart :plot-data="sensor_depths_split.DEJU" x_key="week"
-                   :width="width" :height="height - 10" :margin="margin" :colors="color">
+                   :width="width" :height="height - 10" :margin="margin" :colors="color"
+                   xaxis-label="soil CO2">
         </LineChart>
 
         <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
-                   :width="width" :height="height - 10" :margin="margin" :colors="color">
+                   :width="width" :height="height - 10" :margin="margin" :colors="color"
+                   xaxis-label="soil CO2">
         </LineChart>
       </div>
 
@@ -67,7 +70,7 @@ export default {
       return {BONA, DEJU, HEAL}
     },
     legendData() {
-      const verPos = ["503", "502", "501"]
+      const verPos = ["501", "502", "503"]
       return this.color.map((color, i) => ({name: verPos[i], color}))
     }
   },
@@ -81,7 +84,7 @@ export default {
   methods: {
     resizeWidthAndHeight() {
       this.width = this.$refs.sensorChartContainer.clientWidth - 1
-      this.height = (this.$refs.sensorChartContainer.clientHeight - 1)/ 3
+      this.height = (this.$refs.sensorChartContainer.clientHeight - 1) / 3
     }
   }
 }

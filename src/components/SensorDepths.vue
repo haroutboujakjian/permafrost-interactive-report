@@ -107,7 +107,7 @@ export default {
 <style scoped>
 .sensorDepthsSection {
   height: 90vh;
-  margin: 0 auto;
+  margin: 3rem auto 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -121,6 +121,8 @@ export default {
 
 .legendContainer {
   height: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 .depthColumn {

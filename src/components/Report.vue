@@ -76,13 +76,38 @@
     <small>Figure 3:</small>
 
     <h3>How do we use various sensor positions?</h3>
-    <SensorDepths class="graphicContainer"></SensorDepths>
+    <p>
+      All data products report measurements from various positions across the site and at different depths beneath the
+      surface of the Earth; these are usually placed at most one meter deep. Different soil depths can provide very
+      different results and different positions relative to the sensor tower can provide additional replicates, as they
+      do not tend to vary widely. These positions need to be considered when working with the data and are encoded as
+      <span>verticalPosition</span> and <span>horizontalPosition</span>.
+
+      There are two important considerations when investigating sensor positions: when a sensor is repositioned and how
+      to aggregate observations across different sensors. Because these are detailed and separate considerations, they
+      are separated into different subsections.
+    </p>
 
     <h3>What happens when a sensor is repositioned?</h3>
     <p>Fill in</p>
 
     <h3>How do we aggregate between sensors?</h3>
-    <p>Fill in</p>
+    <p>
+      Many of the data products gather measurements from various positions across the site. Different soil depths can
+      provide drastically varying results and different positions relative to the sensor tower can provide additional
+      replicates. These positions need to be considered when working with the data and are encoded as verticalPosition
+      and horizontalPosition.
+
+      The example below illustrates the resulting differences in measurements from the three verticalPositions in the
+      Soil CO2 data product. Deeper sensors tend to report higher and more volatile values of CO2 in the soil, whereas
+      shallower sensors produce smaller and less volatile measurements. This makes sense, as values closer to the
+      surface of the Earth have more exposure to atmospheric air. Each of the values of sensor depth are aggregated over
+      all of the horizontalPositions for a given day. This demonstrates how verticalPosition and horizontalPosition
+      should not be aggregated in the same way, specifically that different levels of vertical position report
+      meaningfully different measurements, whereas different levels of horizontal position can provide replicates
+      relative to one vertical position.
+    </p>
+    <SensorDepths class="graphicContainer"></SensorDepths>
 
     <h3>How do we re-index to the best time scale?</h3>
     <p>Fill in</p>

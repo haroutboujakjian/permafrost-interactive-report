@@ -9,14 +9,14 @@
     <div ref="chartContainer" class="chartContainer">
       <h4>BONA Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.DEJU" x_key="date"
-                 :width="width" :height="height/2 - 65" :margin="margin"
+                 :width="width" :height="height/2 - 55" :margin="margin"
                  :colors="[colors['DEJU']]" :y-axis-max="6000"
                  xaxis-label="ppm CO2" :y-axis-margins="{dx: -35, dy: 65}"
                  :area-chart="true">
       </LineChart>
       <h4>HEAL Mean CO<sub>2</sub></h4>
       <LineChart :plot-data="plotDataSites.HEAL" x_key="date"
-                 :width="width" :height="height/2 - 65" :margin="margin"
+                 :width="width" :height="height/2 - 55" :margin="margin"
                  :colors="[colors['HEAL']]" :y-axis-max="8500"
                  xaxis-label="ppm CO2" :y-axis-margins="{dx: -35, dy: 65}"
                  :area-chart="true">
@@ -38,7 +38,7 @@ export default {
     return {
       plotData: co2_by_threshold_two_sensors,
       colors: {"BONA": '#440154FF', "DEJU": '#39568CFF', "HEAL": '#1F968BFF'},
-      margin: {top: 15, bottom: 20, left: 55, right: 5},
+      margin: {top: 10, bottom: 25, left: 55, right: 5},
       thresholdData: [500, 400, 200, 16, 3],
       thresholdValue: 500,
       width: null,
@@ -83,7 +83,7 @@ export default {
   flex-direction: column;
   height: 90vh;
   margin: 3rem 0 2rem;
-  padding: 2rem 2rem;
+  padding: 2rem 2rem 1rem;
 }
 
 form {

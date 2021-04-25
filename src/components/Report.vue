@@ -266,9 +266,9 @@ p > span {
   background-color: #f8f8f8;
   border: solid 1px #ddd;
   border-radius: 3px;
-  padding: 0 5px;
+  padding: 0 3px;
   margin: 0 1px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .faIcon {

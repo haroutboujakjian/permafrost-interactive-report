@@ -73,4 +73,8 @@ table {
 tr:nth-child(2n){
   background-color: var(--chart-background);
 }
+
+td {
+  word-break: break-word;
+}
 </style>

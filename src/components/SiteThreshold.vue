@@ -1,7 +1,7 @@
 <template>
   <div class="verticalPositionSection">
     <form>
-      <label for="threshold">Threshold: {{ thresholdValue }}</label>
+      <label for="threshold">CO<sub>2</sub> IQR Threshold: {{ thresholdValue }}</label>
       <vue-slider id="threshold" v-model="thresholdValue" :data="thresholdData"
                   :marks="true" :absorb="true" :contained="true">
       </vue-slider>

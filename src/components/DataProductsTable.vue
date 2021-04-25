@@ -77,4 +77,10 @@ tr:nth-child(2n){
 td {
   word-break: break-word;
 }
+
+@media (min-width: 600px) {
+  td {
+    word-break: normal;
+  }
+}
 </style>

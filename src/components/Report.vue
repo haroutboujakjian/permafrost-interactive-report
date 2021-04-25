@@ -100,9 +100,15 @@
       different from data that does pass the quality field.
     </p>
     <p>
-      In the interactive plots below, we have added a threshold slider to show the effect the finalQF has on the data
-      reported from the BONA and HEAL sites. The slider is programmed to go through five values:
+      In the plots below, the interactive slider changes the threshold for <span>residual.for.outlier</span> /
+      <span>residual.IQR.for.outlier</span>, which is used in the filter for removing outliers (along with
+      <span>finalQF</span>).
+      The slider is programmed to go through five values (these were chosen to show large outlier removal):
       <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
+      Decreasing the threshold from 500 to 400 shows a large outlier getting removed from BONA in May 2020. However,
+      consistently decreasing this threshold doesn't help determine the optimal value. Going from a threshold 200 to 16,
+      we see an outlier get removed from February 2018 for the HEAL site, but continuing to decrease it from 16 to 3
+      the forced a different outlier back.
     </p>
     <SiteThreshold class="graphicContainer"></SiteThreshold>
     <small>Figure 3:</small>
@@ -287,6 +293,7 @@
 
     <h2>Regression Analysis</h2>
     <ACF class="graphicContainer"></ACF>
+    <small>Figure ?: </small>
 
     <h3>Ordinary Least Squares Linear Regression</h3>
     <p>Fill in</p>
@@ -397,5 +404,9 @@ figcaption {
   font-size: 0.82rem;
   font-style: italic;
   margin-top: 0.5rem;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>

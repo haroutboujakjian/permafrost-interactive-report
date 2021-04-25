@@ -81,7 +81,7 @@ export default {
 
 <style scoped>
 .acfGraphicSection {
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   height: 50vh;
 }
 

@@ -2,20 +2,20 @@
   <section class="acfGraphicSection">
 
     <form>
-      <input id="radioAdjusted" type="radio" value="adjusted" v-model="chartSelection">
-      <label for="radioAdjusted">Adjusted</label>
+      <input id="radioLM" type="radio" value="lm" v-model="chartSelection">
+      <label for="radioLM">Linear</label>
       <input id="radioFourier" type="radio" value="fourier" v-model="chartSelection">
       <label for="radioFourier">Fourier</label>
       <input id="radioSeasonal" type="radio" value="seasonal" v-model="chartSelection">
       <label for="radioSeasonal">Seasonal</label>
-      <input id="radioLM" type="radio" value="lm" v-model="chartSelection">
-      <label for="radioLM">LM</label>
+      <input id="radioAdjusted" type="radio" value="adjusted" v-model="chartSelection">
+      <label for="radioAdjusted">Adjusted</label>
     </form>
 
     <div class="acfChartContainer" ref="acfChartContainer">
       <StackedBarChart :plot-data="plotDataFiltered" x-key="lag" :colors="colors"
                        :width="width" :height="height" :margin="margin" :bar-axis-tick-values="axisTickVals"
-                       :enable-tooltip="false" :linear-axis-min="-0.15" :annotations="annotations">
+                       :linear-axis-min="-0.15" :annotations="annotations">
       </StackedBarChart>
     </div>
 
@@ -31,7 +31,7 @@ export default {
   components: {StackedBarChart},
   data() {
     return {
-      chartSelection: "adjusted",
+      chartSelection: "lm",
       plotdata: ACFdata,
       width: 1000,
       height: 300,
@@ -57,7 +57,7 @@ export default {
     window.removeEventListener('resize', this.resizeWidthAndHeight)
   },
   methods: {
-    resizeWidthAndHeight(){
+    resizeWidthAndHeight() {
       this.width = this.$refs.acfChartContainer.clientWidth - 1
       this.height = this.$refs.acfChartContainer.clientHeight - 1
     }

@@ -168,7 +168,108 @@
     </p>
 
     <h2>Seasonality and Trend Analysis</h2>
-    <p>Fill in</p>
+    <figure>
+      <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA">
+    </figure>
+
+    <p>
+      In the first facet of the above plot denoted “raw,” the soil CO2 concentration at the BONA site with missing
+      values filled in via interpolation is illustrated. The trend and seasonality inferred by STL are illustrated in
+      the “trend” and “season_year” facets, respectively. Finally, the “remainder” facet contains the soil CO2
+      concentration values after the trend and seasonal values have been removed.
+    </p>
+
+    <p>
+      The distinct annual seasonality observed earlier accounts for large changes in soil CO2 concentration level.
+      Seasonality accounts for changes of a magnitude of approximately 800 ppm from lows in the winter to highs in the
+      summer.
+    </p>
+
+    <p>
+      Trend is miniscule in comparison, accounting for changes of no more than 55 ppm. Furthermore, trend is not
+      consistently increasing or decreasing over the 3 years of observation at the BONA site. It appears to decrease
+      slightly, then increase, then decrease slightly again.
+    </p>
+
+    <p>
+      There is a sizable amount of variation left in the remainder, after removal of trend and seasonal components.
+      While the remainders are relatively small in magnitude during winter months, during the summer they can be as
+      great as 400 ppm in magnitude, both above or below expectation from seasonality and trend.
+    </p>
+
+    <p>
+      Trend inferred by STL is even more questionable when examined in light of sensors at different depths.
+    </p>
+
+    <figure>
+      <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA">
+    </figure>
+
+    <p>
+      STL decomposition results in a trend for soil CO2 concentration sensors at the BONA site with
+      <span>verticalPosition</span> 501 that remains fairly level from mid-2019 to 2021, staying with 5 ppm.
+    </p>
+
+    <figure>
+      <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA">
+    </figure>
+
+    <p>
+      However, STL decomposition for soil CO2 concentration sensors at the BONA site with <span>verticalPosition</span>
+      503 shows has a sharp decline from mid-2019 to 2021 of 30 ppm.
+    </p>
+
+    <p>
+      Because the trend identified by STL decomposition is very small in magnitude compared with seasonality and with
+      remainder, and the trends are not consistent between sensors even within the same site, it is likely the trends
+      are spurious.
+    </p>
+
+    <p>
+      Soil CO2 concentration at the BONA site may be undergoing a long-term trend. However, such a trend is of small
+      enough magnitude that 3 years of data is likely insufficient to detect it, especially considering the relatively
+      large seasonal and nonseasonal fluctuations.
+    </p>
+
+    <figure>
+      <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU">
+    </figure>
+
+    <p>
+      Decomposition of soil CO2 concentration at the DEJU site is similar to that for the BONA site. There is a distinct
+      annual seasonality that accounts for changes with magnitude of approximately 1000 ppm between extremes. Trend
+      changes direction from year to year and represents magnitudes of no more than 40 ppm. The remainder highlights
+      that the highest spike in soil CO2 concentration that reaches nearly 1500 ppm and occurs in 2018 before the
+      expected summer seasonal highs is an outlier. A similarly timed spike occurs in the remainder with magnitude 800
+      ppm, while no other spike in the remainder is greater than approximately 400 ppm.
+    </p>
+
+    <figure>
+      <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL">
+    </figure>
+
+    <p>
+      Decomposition of soil CO2 concentration at the HEAL site reflects less of a regular annual seasonality than that
+      observed at either the BONA or DEJU sites. Rather than there being a single high in the summer and low in the
+      winter, there are multiple seasonal peaks, spiking in spring and in fall, with no observable summer increase.
+      Seasonality represents magnitudes of approximately 1000 ppm in change at the extremes.
+    </p>
+
+    <p>
+      Trend as decomposed by STL is much greater at the HEAL site than at either the BONA or DEJU sites, representing
+      approximate magnitude of 400 ppm in changes as the extremes. Trend is not monotonic. It is estimated to increase,
+      then decrease, then increase again.
+    </p>
+
+    <p>
+      The magnitude of fluctuations in the remainder is greater for the HEAL site. Remainder spikes are as high as 1400
+      ppm and as low as -1000 ppm.
+    </p>
+
+    <p>
+      Overall, the STL decomposition of soil CO2 concentration at the HEAL site reflects the relative lack of distinct
+      seasonality compared with the BONA or DEJU sites.
+    </p>
 
     <h2>Regression Analysis</h2>
     <ACF class="graphicContainer"></ACF>

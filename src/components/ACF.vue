@@ -2,14 +2,25 @@
   <section class="acfGraphicSection">
 
     <form>
-      <input id="radioLM" type="radio" value="lm" v-model="chartSelection">
-      <label for="radioLM">Linear</label>
-      <input id="radioFourier" type="radio" value="fourier" v-model="chartSelection">
-      <label for="radioFourier">Fourier</label>
-      <input id="radioSeasonal" type="radio" value="seasonal" v-model="chartSelection">
-      <label for="radioSeasonal">Seasonal</label>
-      <input id="radioAdjusted" type="radio" value="adjusted" v-model="chartSelection">
-      <label for="radioAdjusted">Adjusted</label>
+      <div class="inputGroup">
+        <input id="radioLM" type="radio" value="lm" v-model="chartSelection">
+        <label for="radioLM">Linear</label>
+      </div>
+
+      <div class="inputGroup">
+        <input id="radioFourier" type="radio" value="fourier" v-model="chartSelection">
+        <label for="radioFourier">Fourier</label>
+      </div>
+
+      <div class="inputGroup">
+        <input id="radioSeasonal" type="radio" value="seasonal" v-model="chartSelection">
+        <label for="radioSeasonal">Seasonal</label>
+      </div>
+
+      <div class="inputGroup">
+        <input id="radioAdjusted" type="radio" value="adjusted" v-model="chartSelection">
+        <label for="radioAdjusted">Adjusted</label>
+      </div>
     </form>
 
     <div class="acfChartContainer" ref="acfChartContainer">
@@ -77,6 +88,12 @@ export default {
 form {
   height: 50px;
   padding-left: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form .inputGroup {
   display: flex;
   align-items: center;
 }

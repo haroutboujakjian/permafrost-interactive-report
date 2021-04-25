@@ -1,8 +1,5 @@
 <template>
   <main>
-    <SunIcon/>
-    <h1>Carbon Dioxide Soil Analysis in Alaskan Permafrost Sites</h1>
-
     <h2>What is Permafrost?</h2>
     <p>
       Understanding the melting of permafrost helps in piecing together the larger global climate change issue.
@@ -10,6 +7,7 @@
       depicts what permafrost commonly looks like, as well as showing the active layer. This layer above permafrost
       is the normal soil which melts and freezes based on the season.
     </p>
+
     <figure>
       <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
       <figcaption>
@@ -55,7 +53,6 @@
       <DataProductsTable/>
       <figcaption>Table 1: Data products used this analysis.</figcaption>
     </figure>
-
 
     <h2>Data Preprocessing</h2>
 
@@ -133,6 +130,8 @@
       replicates. These positions need to be considered when working with the data and are encoded as verticalPosition
       and horizontalPosition.
 
+    </p>
+    <p>
       The example below illustrates the resulting differences in measurements from the three verticalPositions in the
       Soil CO2 data product. Deeper sensors tend to report higher and more volatile values of CO2 in the soil, whereas
       shallower sensors produce smaller and less volatile measurements. This makes sense, as values closer to the
@@ -168,8 +167,23 @@
     </p>
 
     <h2>Seasonality and Trend Analysis</h2>
+
+    <h3>Seasonal and Trend Decomposition using LOESS (STL)</h3>
+    <p>
+      Time series data can exhibit seasonality, trend, or both phenomena. Seasonality is a tendency for an observed
+      value, such as soil CO2 concentration, to increase or decrease according to a regular, repeating time period.
+      Trend is an overall tendency for an observed value to increase or decrease over time, after seasonality has been
+      accounted for. A time series that has been separated into components that represent seasonality, trend, and a
+      remainder are said to be “decomposed.”
+    </p>
+
+    <p>
+      There is an obvious seasonal pattern in the time series, with relatively low values in the winter increasing to
+      relatively high values in the summer, after which values decrease again back down to winter levels.
+    </p>
+
     <figure>
-      <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA">
+      <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
     </figure>
 
     <p>
@@ -202,7 +216,7 @@
     </p>
 
     <figure>
-      <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA">
+      <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA" loading="lazy">
     </figure>
 
     <p>
@@ -211,7 +225,7 @@
     </p>
 
     <figure>
-      <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA">
+      <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA" loading="lazy">
     </figure>
 
     <p>
@@ -232,7 +246,7 @@
     </p>
 
     <figure>
-      <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU">
+      <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
     </figure>
 
     <p>
@@ -245,7 +259,7 @@
     </p>
 
     <figure>
-      <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL">
+      <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
     </figure>
 
     <p>
@@ -296,7 +310,6 @@
 import SiteThreshold from "@/components/SiteThreshold";
 import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
 import SensorDepths from "@/components/SensorDepths";
-import SunIcon from "@/components/SunIcon";
 import DataProductsTable from "@/components/DataProductsTable";
 import ACF from "@/components/ACF";
 
@@ -306,7 +319,6 @@ export default {
     SiteThreshold,
     AllSitesMapTimeSeries,
     SensorDepths,
-    SunIcon,
     DataProductsTable,
     ACF
   },
@@ -324,34 +336,6 @@ main {
   height: 100%;
   padding-bottom: 100px;
   background-color: #a0cbdb;
-  --main-color: #002480;
-  --main-width: clamp(250px, 68%, 800px);
-  --chart-background: #9dc5d5;
-  /*--chart-background: #99c4d4;*/
-}
-
-h1, h2, h3 {
-  font-weight: bold;
-  text-align: left;
-  color: var(--main-color);
-  width: var(--main-width);
-  align-self: center;
-}
-
-h1 {
-  font-size: 1.9rem;
-  text-align: center;
-  margin: 0.25rem 0 0.6rem;
-}
-
-h2 {
-  font-size: 1.60rem;
-  margin: 2rem 0 0.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 2rem 0 0.5rem;
 }
 
 p {

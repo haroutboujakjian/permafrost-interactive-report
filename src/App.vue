@@ -1,32 +1,26 @@
 <template>
   <body id="app">
+  <Header/>
   <Report/>
+  <Footer/>
   </body>
 </template>
 
 <script>
+import Header from "@/components/Header";
 import Report from "@/components/Report";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'App',
   components: {
+    Footer,
+    Header,
     Report
   }
 }
 </script>
 
 <style>
-@import "~@fontsource/lato/";
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #a0cbdb;
-}
 
-#app {
-  font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 </style>

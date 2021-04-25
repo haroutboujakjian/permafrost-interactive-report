@@ -1,0 +1,42 @@
+@import "~@fontsource/lato/";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #a0cbdb;
+    --main-color: #002480;
+    --main-width: clamp(250px, 68%, 800px);
+    --chart-background: #9dc5d5;
+    /*--chart-background: #99c4d4;*/
+}
+
+#app {
+    font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    text-align: left;
+    color: var(--main-color);
+    width: var(--main-width);
+    align-self: center;
+}
+
+h1 {
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 0.25rem auto 0.6rem;
+}
+
+h2 {
+    font-size: 1.60rem;
+    margin: 2rem 0 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.5rem;
+}

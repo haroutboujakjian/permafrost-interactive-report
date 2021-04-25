@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       sensor_depths: weekly_sensor_depth_data,
-      margin: {top: 10, bottom: 25, left: 50, right: 20},
+      margin: {top: 10, bottom: 30, left: 50, right: 20},
       color: ["#FFC6C6", "#FF5F5F", "#900101"],
       width: null,
       height: null,

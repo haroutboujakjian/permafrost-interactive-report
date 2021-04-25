@@ -100,7 +100,7 @@ form > label {
 }
 
 form #threshold {
-  width: 20rem !important;
+  max-width: 20rem !important;
 }
 
 .chartContainer {

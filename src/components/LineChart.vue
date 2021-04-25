@@ -15,7 +15,9 @@
       <g v-yaxis="{ scale: yScale, width: width - margin.left - margin.right}"
          :transform="`translate(${margin.left} 0)`">
       </g>
-      <text class="xaxisLabel" :x="-margin.top - 20" :y="-margin.left + 60">{{ xaxisLabel }}</text>
+      <text class="yAxisLabel" :x="-margin.top" :dx="yAxisMargins.dx" :y="-margin.left" :dy="yAxisMargins.dy">
+        {{ xaxisLabel }}
+      </text>
     </svg>
 
     <div v-if="enable_tooltip && showTooltip" class="tooltipContainer"
@@ -67,6 +69,12 @@ export default {
     areaChart: {
       type: Boolean,
       default: false,
+    },
+    yAxisMargins: {
+      type: Object,
+      default: function () {
+        return {dx: -25, dy: 60,}
+      }
     }
   },
   data() {
@@ -188,7 +196,7 @@ path {
   visibility: hidden;
 }
 
-.xaxisLabel {
+.yAxisLabel {
   transform: rotate(-90deg);
   text-anchor: middle;
   font-size: 0.85rem;

@@ -39,6 +39,13 @@
            :transform="`translate(0, ${barAxisLocation === 'top' ? margin.top : height - margin.bottom})`">
         </g>
       </template>
+      <text class="yAxisLabel" :x="-margin.top" :dx="yAxisMargins.dx" :y="-margin.left" :dy="yAxisMargins.dy">
+        {{ yAxisLabel }}
+      </text>
+      <text class="xAxisLabel" :x="width - margin.right" :y="height - margin.bottom"
+            :dx="xAxisMargins.dx" :dy="xAxisMargins.dy">
+        {{ xAxisLabel }}
+      </text>
       <Annotations :annotations="annotations" :margin="margin"
                    :linear-scale="linearScale" :bar-scale="barScale"
                    :width="width" :height="height" :direction="direction">
@@ -114,7 +121,26 @@ export default {
     },
     linearAxisMin: {
       type: Number,
-    }
+    },
+    yAxisMargins: {
+      type: Object,
+      default: function () {
+        return {dx: -25, dy: 60,}
+      }
+    },
+    yAxisLabel: {
+      type: String
+    },
+    xAxisMargins: {
+      type: Object,
+      default: function () {
+        return {dx: -20, dy: 30,}
+      }
+    },
+    xAxisLabel: {
+      type: String
+    },
+
   },
   data() {
     return {
@@ -236,5 +262,17 @@ rect {
 .activeTooltip {
   opacity: 0.9;
   transition: opacity 0.3s;
+}
+
+.yAxisLabel {
+  transform: rotate(-90deg);
+  text-anchor: middle;
+  font-size: 0.85rem;
+  shape-rendering: geometricPrecision;
+}
+
+.xAxisLabel {
+  text-anchor: middle;
+  font-size: 0.85rem;
 }
 </style>

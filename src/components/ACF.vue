@@ -15,7 +15,9 @@
     <div class="acfChartContainer" ref="acfChartContainer">
       <StackedBarChart :plot-data="plotDataFiltered" x-key="lag" :colors="colors"
                        :width="width" :height="height" :margin="margin" :bar-axis-tick-values="axisTickVals"
-                       :linear-axis-min="-0.15" :annotations="annotations">
+                       :linear-axis-min="-0.15" :annotations="annotations"
+                       y-axis-label="ACF" :y-axis-margins="{dx: -10, dy: 75}"
+                       x-axis-label="Lag">
       </StackedBarChart>
     </div>
 
@@ -36,7 +38,7 @@ export default {
       width: 1000,
       height: 300,
       colors: ["#002480"],
-      margin: {top: 20, bottom: 20, left: 50, right: 5},
+      margin: {top: 20, bottom: 40, left: 55, right: 20},
       axisTickVals: [0, 100, 200, 300],
       annotations: [
         {type: 'line', value: 0.05713, axis: "y", dash: true},

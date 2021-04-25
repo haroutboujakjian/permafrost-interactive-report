@@ -171,6 +171,7 @@
     <p>Fill in</p>
 
     <h2>Regression Analysis</h2>
+    <ACF class="graphicContainer"></ACF>
 
     <h3>Ordinary Least Squares Linear Regression</h3>
     <p>Fill in</p>
@@ -196,6 +197,7 @@ import AllSitesMapTimeSeries from "@/components/AllSitesMapTimeSeries";
 import SensorDepths from "@/components/SensorDepths";
 import SunIcon from "@/components/SunIcon";
 import DataProductsTable from "@/components/DataProductsTable";
+import ACF from "@/components/ACF";
 
 export default {
   name: "Report",
@@ -204,7 +206,8 @@ export default {
     AllSitesMapTimeSeries,
     SensorDepths,
     SunIcon,
-    DataProductsTable
+    DataProductsTable,
+    ACF
   },
   data() {
     return {}

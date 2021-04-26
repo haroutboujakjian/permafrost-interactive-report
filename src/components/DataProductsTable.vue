@@ -70,17 +70,5 @@ table {
   background-color: inherit;
 }
 
-tr:nth-child(2n){
-  background-color: var(--chart-background);
-}
 
-td {
-  word-break: break-word;
-}
-
-@media (min-width: 600px) {
-  td {
-    word-break: normal;
-  }
-}
 </style>

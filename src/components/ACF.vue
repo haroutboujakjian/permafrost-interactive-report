@@ -32,6 +32,27 @@
       </StackedBarChart>
     </div>
 
+    <table class="table">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Estimate</th>
+        <th>Std. Error</th>
+        <th>t-statistic</th>
+        <th>p-value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="(values, model) in regressionResultsFiltered" :key="model">
+        <td>{{values.type}}</td>
+        <td>{{values.Estimate}}</td>
+        <td>{{values.err}}</td>
+        <td>{{values.tVal}}</td>
+        <td>{{values.pVal}}</td>
+      </tr>
+      </tbody>
+    </table>
+
   </section>
 </template>
 
@@ -54,12 +75,33 @@ export default {
       annotations: [
         {type: 'line', value: 0.05713, axis: "y", dash: true},
         {type: 'line', value: -0.05713, axis: "y", dash: true},
-      ]
+      ],
+      regressionResults: {
+        "lm": [
+          {type: "Intercept", Estimate: 6.4031, err: 0.0043800, tVal: 1461.90, pVal: "<0.0001"},
+          {type: "Soil Temperature", Estimate: 0.0331, err: 0.0006013, tVal: 55.18, pVal: "<0.0001"},
+        ],
+        "fourier": [
+          {type: "Intercept", Estimate: 0.0000535, err: 0.00150, tVal: 0.0356, pVal: 0.972},
+          {type: "Soil Temperature", Estimate: 0.0201, err: 0.00124, tVal: 16.2, pVal: "<0.0001"},
+        ],
+        "seasonal": [
+          {type: "Intercept", Estimate: "N/A", err: "N/A", tVal: "N/A", pVal: "N/A"},
+          {type: "Soil Temperature", Estimate: 0.0217, err: 0.00142, tVal: 15.2, pVal: "<0.0001"},
+        ],
+        "adjusted": [
+          {type: "Intercept", Estimate: -0.0000420, err: 0.000731, tVal: -0.0575, pVal: 0.954},
+          {type: "Soil Temperature", Estimate: 0.0205, err: 0.00126, tVal: 16.2, pVal: "<0.0001"},
+        ],
+      }
     }
   },
   computed: {
     plotDataFiltered() {
       return this.plotdata[this.chartSelection]
+    },
+    regressionResultsFiltered(){
+      return this.regressionResults[this.chartSelection]
     }
   },
   mounted() {
@@ -82,7 +124,7 @@ export default {
 <style scoped>
 .acfGraphicSection {
   margin: 0 auto 2rem;
-  height: 50vh;
+  height: 70vh;
 }
 
 form {
@@ -103,8 +145,14 @@ form label {
   margin-left: 4px;
 }
 
+table {
+  height: 120px;
+  font-size: 0.88rem;
+  margin: 0 auto;
+}
+
 .acfChartContainer {
-  height: calc(100% - 50px);
+  height: calc(100% - 120px - 50px);
   width: 100%;
 }
 </style>

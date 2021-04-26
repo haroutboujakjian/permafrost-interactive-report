@@ -51,7 +51,7 @@
     <h3>Leveraged Data Sets</h3>
     <figure>
       <DataProductsTable/>
-      <figcaption>Table 1: Data products used this analysis.</figcaption>
+      <figcaption>Table 1: The three data products used in the analysis.</figcaption>
     </figure>
 
     <h2>Data Preprocessing</h2>
@@ -82,10 +82,10 @@
     </p>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
     <small>
-      Figure 2: Click
-      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
-      the points on the map to select/deselect specific sites from the line chart, and use the start and end date inputs
-      to render different time durations.
+      Figure 2: Mean CO<sub>2</sub> values for each of the fives in Alaska. Click
+      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon> the points on the map to
+      select/deselect specific sites from the line chart, and use the start and end date inputs to render different
+      time durations.
     </small>
 
     <h3>Should we always eliminate bad observations?</h3>
@@ -111,7 +111,11 @@
       the forced a different outlier back.
     </p>
     <SiteThreshold class="graphicContainer"></SiteThreshold>
-    <small>Figure 3:</small>
+    <small>Figure 3:
+      Mean CO<sub>2</sub> values for BONA and HEAL sites. The interactive slider changes the threshold for
+      <span>residual.for.outlier</span> / <span>residual.IQR.for.outlier</span>, which is used as a filter criteria to
+      remove outliers.
+    </small>
 
     <h3>How do we use various sensor positions?</h3>
     <p>
@@ -406,7 +410,5 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-a:hover {
-  text-decoration: underline;
-}
+
 </style>

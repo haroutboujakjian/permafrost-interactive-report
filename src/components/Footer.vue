@@ -22,6 +22,8 @@ export default {
 footer{
   width: var(--main-width);
   margin: 0 auto 5rem;
+  padding-top: 5px;
+  border-top: solid 1px var(--main-color);
 }
 
 a {
@@ -31,4 +33,5 @@ a {
 a:hover {
   color: black;
 }
+
 </style>

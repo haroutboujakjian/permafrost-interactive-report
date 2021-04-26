@@ -38,7 +38,7 @@ export default {
     return {
       plotData: co2_by_threshold_two_sensors,
       colors: {"BONA": '#440154FF', "DEJU": '#39568CFF', "HEAL": '#1F968BFF'},
-      margin: {top: 10, bottom: 25, left: 55, right: 5},
+      margin: {top: 8, bottom: 25, left: 55, right: 5},
       thresholdData: [500, 400, 200, 16, 3],
       thresholdValue: 500,
       width: null,
@@ -116,6 +116,7 @@ form #threshold {
   margin-top: 1rem;
   font-weight: bold;
   align-self: flex-end;
+  color: var(--main-color)
 }
 
 </style>

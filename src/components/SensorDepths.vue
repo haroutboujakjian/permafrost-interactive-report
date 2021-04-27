@@ -15,19 +15,22 @@
         <h4>BONA</h4>
         <LineChart :plot-data="sensor_depths_split.BONA" x_key="week"
                    :width="width" :height="height - 35" :margin="margin" :colors="color"
-                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths">
+                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :y-axis-max="8000">
         </LineChart>
 
         <h4>DEJU</h4>
         <LineChart :plot-data="sensor_depths_split.DEJU" x_key="week"
                    :width="width" :height="height - 35" :margin="margin" :colors="color"
-                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths">
+                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :y-axis-max="8000">
         </LineChart>
 
         <h4>HEAL</h4>
         <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
                    :width="width" :height="height - 35" :margin="margin" :colors="color"
-                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths">
+                   xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :y-axis-max="8000">
         </LineChart>
       </div>
 

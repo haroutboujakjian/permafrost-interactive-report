@@ -5,10 +5,10 @@ import '@/styles/styles.css'
 import VueSlider from "vue-slider-component";
 import 'vue-slider-component/theme/default.css'
 import {library} from "@fortawesome/fontawesome-svg-core";
-import {faMousePointer, faCloud} from "@fortawesome/free-solid-svg-icons";
+import {faHandPointer, faCloud} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
-library.add(faMousePointer, faCloud)
+library.add(faHandPointer, faCloud)
 
 Vue.component('VueSlider', VueSlider)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

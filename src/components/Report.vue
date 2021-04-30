@@ -84,10 +84,9 @@
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
     <small>
       Figure 2: Mean CO<sub>2</sub> values for each of the fives in Alaska. Click
-      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
-      the points on the map to
-      select/deselect specific sites from the line chart, and use the start and end date inputs to render different
-      time durations.
+      <font-awesome-icon icon="hand-pointer" class="faIcon"></font-awesome-icon>
+      the points on the map to select/deselect specific sites from the line chart, and use the start and end date
+      inputs to render different time durations.
     </small>
 
     <h3>Should we always eliminate bad observations?</h3>
@@ -164,8 +163,10 @@
 
     <SensorDepths id="figure7" class="graphicContainer"></SensorDepths>
     <small>Figure 7: Soil CO<sub>2</sub> concentration at different sensor depths, aggregated across horizontal
-      positions. Deeper sensors exhibit
-      larger and more volatile values where as sensors as shallower depths are smaller and less volatile.</small>
+      positions. Deeper sensors exhibit larger and more volatile values where as sensors as shallower depths are
+      smaller and less volatile. Click <font-awesome-icon icon="hand-pointer"></font-awesome-icon> on the text next
+      to the sensor to add or remove specific depths from the plots.
+    </small>
 
     <h3>How do we re-index to the best time scale?</h3>
     <ul>

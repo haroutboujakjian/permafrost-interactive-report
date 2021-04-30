@@ -67,8 +67,7 @@
       <li>
         BARR is the NEON Program's northernmost field site near Utqiaġvik, Alaska (used to be known as Barrow).
         Described as having "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic
-        Ocean; and extreme seasonal variation."
-        <sup><a href="https://www.neonscience.org/field-sites/barr" target="_blank">[1]</a></sup>
+        Ocean; and extreme seasonal variation" (NEON, Utqiaġvik, 2021).
       </li>
 
       <li>
@@ -91,17 +90,6 @@
     </small>
 
     <h3>Should we always eliminate bad observations?</h3>
-    <p>
-      The <span>finalQF</span> field in the dataset indicates whether a data product has passed or failed an overall
-      assessment of its quality. This is helpful in determining when sensor malfunctions still result in reported data,
-      but perhaps the quality of the observation cannot be trusted. More detailed information on understanding the
-      overall quality of each NEON instrumented systems data product using <span>finalQF</span> can be found in
-      <a href="https://data.neonscience.org/api/v0/documents/NEON.DOC.001113vB"
-         rel="noreferrer noopener" target="_blank">NEON.DOC.001113 document</a>
-      attached in any data download. In some cases, observations that do not pass the quality check appear very
-      different from data that does pass the quality field.
-    </p>
-    
     <ul>
       <li><span>finalQF</span> field indicates whether a measurement has passed or failed an overall quality assessment.</li>
       <li>Measurements that fail a quality assessment can still be useful in many circumstances but are sometimes unusable
@@ -113,9 +101,9 @@
     </ul>
     
     <figure>
-      <img src="../assets/finalqfgood.png" alt="Reasonable Soil CO2 values with quality check failures." loading="lazy">
-      <figcaption>Figure 3: Soil CO2 Concentration at site HEAL in June of 2018. Most of the plot shows that the sensor raised a
-                  quality flag (green background), yet the data still appear reasonable. (NEON, Soil CO2, 2021).</figcaption>
+      <img src="../assets/finalqfgood.png" alt="Reasonable Soil CO<sub>2</sub> values with quality check failures." loading="lazy">
+      <figcaption>Figure 3: Soil CO<sub>2</sub> Concentration at site HEAL in June of 2018. Most of the plot shows that the sensor raised a
+                  quality flag (green background), yet the data still appear reasonable. (NEON, Soil CO<sub>2</sub>, 2021).</figcaption>
     </figure>
     
     <figure>
@@ -137,71 +125,42 @@
       <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
     </small>
 
-    <h3>How do we use various sensor positions?</h3>
-    <p>
-      All data products report measurements from various positions across the site and at different depths beneath the
-      surface of the Earth; these are usually placed at most one meter deep. Different soil depths can provide very
-      different results and different positions relative to the sensor tower can provide additional replicates, as they
-      do not tend to vary widely. These positions need to be considered when working with the data and are encoded as
-      <span>verticalPosition</span> and <span>horizontalPosition</span>.
-
-      There are two important considerations when investigating sensor positions: when a sensor is repositioned and how
-      to aggregate observations across different sensors. Because these are detailed and separate considerations, they
-      are separated into different subsections.
-    </p>
-
     <h3>What happens when a sensor is repositioned?</h3>
-    <p>Fill in</p>
+    <ul>
+      <li>Sensors are repositioned because of failures or incorrect placements.</li>
+      <li>Sometimes sensors are repositioned at slightly different depths, resulting in sharp changes in the data values.</li>      
+    </ul>
+
+    <figure>
+      <img src="../assets/sensor_reposition.png" alt="Unreasonable Soil temperature values with quality check failures." loading="lazy">
+      <figcaption>Figure 6: Sensor repositionings, represented with vertical red lines, can lead to sharp changes in soil temperature
+                  across all reading depths. The rows of this plot represent different sensor reading depths, where lower rows
+                  represent deeper sensor placements.</figcaption>
+    </figure>
 
     <h3>How do we aggregate between sensors?</h3>
-    <p>
-      Many of the data products gather measurements from various positions across the site. Different soil depths can
-      provide drastically varying results and different positions relative to the sensor tower can provide additional
-      replicates. These positions need to be considered when working with the data and are encoded as verticalPosition
-      and horizontalPosition.
+    <ul>
+      <li>Vertical sensor positions denote how deep a sensor is into the ground, and report differing results (see figure 7).</li>
+      <li>Horizontal sensor positions denote location along the surface relative to the sensor tower (replicates).</li>      
+    </ul>
 
-    </p>
-    <p>
-      The example below illustrates the resulting differences in measurements from the three verticalPositions in the
-      Soil CO2 data product. Deeper sensors tend to report higher and more volatile values of CO2 in the soil, whereas
-      shallower sensors produce smaller and less volatile measurements. This makes sense, as values closer to the
-      surface of the Earth have more exposure to atmospheric air. Each of the values of sensor depth are aggregated over
-      all of the horizontalPositions for a given day. This demonstrates how verticalPosition and horizontalPosition
-      should not be aggregated in the same way, specifically that different levels of vertical position report
-      meaningfully different measurements, whereas different levels of horizontal position can provide replicates
-      relative to one vertical position.
-    </p>
-    <SensorDepths id="figure6" class="graphicContainer"></SensorDepths>
-    <small>Figure 6: </small>
+    <SensorDepths id="figure7" class="graphicContainer"></SensorDepths>
+    <small>Figure 7: Soil CO<sub>2</sub> concentration at different sensor depths, aggregated across horizontal positions. Deeper sensors exhibit
+                     larger and more volatile values where as sensors as shallower depths are smaller and less volatile.</small>
 
     <h3>How do we re-index to the best time scale?</h3>
-    <p>
-      The regression and time-series models in the following section require data to reported at a given date or time.
-      This analysis focuses on changes to soil CO<sub>2</sub> content over a large time window, so it is rarely
-      necessary to perform analysis on the 1-minute or 30-minute intervals that are provided directly from NEON. Thus,
-      for much of the analysis this data is re-indexed into a daily rate, which also removes any seasonality derived
-      from the day to night cycle. In order to re-index to a single value for the day, a weighted mean of means is
-      calculated, which accounts for differences in number of observations seen in the reported measurements. Daily
-      minimum and maximum values are also created in the re-indexing, and a pooled variance is calculated, again relying
-      on the number of observations reported during each of the default time windows. While the work in this report
-      aggregates data to single days, this process could be reindexed to any time resolution. Filtering out observations
-      based on issues discussed in the previous paragraph should be done prior to a re-indexing step.
-    </p>
-
-    <p>
-      Another reason to consider re-indexing is for computational cost. Many of the visualizations in the interactive
-      report are designed to react in real-time, and they show insights into how decisions were made in preprocessing
-      and modeling. In some multiplot visualizations (Figure 2 and 6), a daily re-indexing can still produce too much
-      data to filter and replot in real-time. For these cases, a weekly index is used. Similar issues can occur with
-      more complex models, or if more covariates are added to models in the following section.
-    </p>
+    <ul>
+      <li>Investigating for trends over years. 30-minute measurements are too small.</li>
+      <li>Start with 30-minute average measurements (comes with number of points).</li>
+      <li>Compute weighted mean and pooled variance for a single day.</li>      
+    </ul>
 
     <h2>Seasonality and Trend Analysis</h2>
 
     <h3>Seasonal and Trend Decomposition using LOESS (STL)</h3>
     <p>
       Time series data can exhibit seasonality, trend, or both phenomena. Seasonality is a tendency for an observed
-      value, such as soil CO2 concentration, to increase or decrease according to a regular, repeating time period.
+      value, such as soil CO<sub>2</sub> concentration, to increase or decrease according to a regular, repeating time period.
       Trend is an overall tendency for an observed value to increase or decrease over time, after seasonality has been
       accounted for. A time series that has been separated into components that represent seasonality, trend, and a
       remainder are said to be “decomposed.”
@@ -214,18 +173,18 @@
 
     <figure>
       <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 7: </figcaption>
+      <figcaption>Figure 8: </figcaption>
     </figure>
 
     <p>
-      In the first facet of the above plot denoted “raw,” the soil CO2 concentration at the BONA site with missing
+      In the first facet of the above plot denoted “raw,” the soil CO<sub>2</sub> concentration at the BONA site with missing
       values filled in via interpolation is illustrated. The trend and seasonality inferred by STL are illustrated in
-      the “trend” and “season_year” facets, respectively. Finally, the “remainder” facet contains the soil CO2
+      the “trend” and “season_year” facets, respectively. Finally, the “remainder” facet contains the soil CO<sub>2</sub>
       concentration values after the trend and seasonal values have been removed.
     </p>
 
     <p>
-      The distinct annual seasonality observed earlier accounts for large changes in soil CO2 concentration level.
+      The distinct annual seasonality observed earlier accounts for large changes in soil CO<sub>2</sub> concentration level.
       Seasonality accounts for changes of a magnitude of approximately 800 ppm from lows in the winter to highs in the
       summer.
     </p>
@@ -248,21 +207,21 @@
 
     <figure>
       <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 8: </figcaption>
+      <figcaption>Figure 9: </figcaption>
     </figure>
 
     <p>
-      STL decomposition results in a trend for soil CO2 concentration sensors at the BONA site with
+      STL decomposition results in a trend for soil CO<sub>2</sub> concentration sensors at the BONA site with
       <span>verticalPosition</span> 501 that remains fairly level from mid-2019 to 2021, staying with 5 ppm.
     </p>
 
     <figure>
       <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 9: </figcaption>
+      <figcaption>Figure 10: </figcaption>
     </figure>
 
     <p>
-      However, STL decomposition for soil CO2 concentration sensors at the BONA site with <span>verticalPosition</span>
+      However, STL decomposition for soil CO<sub>2</sub> concentration sensors at the BONA site with <span>verticalPosition</span>
       503 shows has a sharp decline from mid-2019 to 2021 of 30 ppm.
     </p>
 
@@ -273,32 +232,32 @@
     </p>
 
     <p>
-      Soil CO2 concentration at the BONA site may be undergoing a long-term trend. However, such a trend is of small
+      Soil CO<sub>2</sub> concentration at the BONA site may be undergoing a long-term trend. However, such a trend is of small
       enough magnitude that 3 years of data is likely insufficient to detect it, especially considering the relatively
       large seasonal and nonseasonal fluctuations.
     </p>
 
     <figure>
       <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
-      <figcaption>Figure 10: </figcaption>
+      <figcaption>Figure 11: </figcaption>
     </figure>
 
     <p>
-      Decomposition of soil CO2 concentration at the DEJU site is similar to that for the BONA site. There is a distinct
+      Decomposition of soil CO<sub>2</sub> concentration at the DEJU site is similar to that for the BONA site. There is a distinct
       annual seasonality that accounts for changes with magnitude of approximately 1000 ppm between extremes. Trend
       changes direction from year to year and represents magnitudes of no more than 40 ppm. The remainder highlights
-      that the highest spike in soil CO2 concentration that reaches nearly 1500 ppm and occurs in 2018 before the
+      that the highest spike in soil CO<sub>2</sub> concentration that reaches nearly 1500 ppm and occurs in 2018 before the
       expected summer seasonal highs is an outlier. A similarly timed spike occurs in the remainder with magnitude 800
       ppm, while no other spike in the remainder is greater than approximately 400 ppm.
     </p>
 
     <figure>
       <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
-      <figcaption>Figure 11: </figcaption>
+      <figcaption>Figure 12: </figcaption>
     </figure>
 
     <p>
-      Decomposition of soil CO2 concentration at the HEAL site reflects less of a regular annual seasonality than that
+      Decomposition of soil CO<sub>2</sub> concentration at the HEAL site reflects less of a regular annual seasonality than that
       observed at either the BONA or DEJU sites. Rather than there being a single high in the summer and low in the
       winter, there are multiple seasonal peaks, spiking in spring and in fall, with no observable summer increase.
       Seasonality represents magnitudes of approximately 1000 ppm in change at the extremes.
@@ -316,7 +275,7 @@
     </p>
 
     <p>
-      Overall, the STL decomposition of soil CO2 concentration at the HEAL site reflects the relative lack of distinct
+      Overall, the STL decomposition of soil CO<sub>2</sub> concentration at the HEAL site reflects the relative lack of distinct
       seasonality compared with the BONA or DEJU sites.
     </p>
 
@@ -337,7 +296,27 @@
     <p>Fill in</p>
 
     <h2>Conclusions</h2>
-    <p>Fill in</p>
+    <ul>
+      <li>Developed data product preprocessing framework.</li>
+      <li>Demonstrated why time-series modeled are needed.</li>
+      <li>Verified association between soil temperature and CO<sub>2</sub> contentration.</li>
+    </ul>
+    <p><b>NEON data is big and messy, but can provide insights to important environmental problems.</b></p>
+
+    <h2>Works Cited</h2>
+
+    <apa-reference>Battelle. (2021). Science design. Retrieved April 20, 2021, from https://www.battelleecology.org/about/about/science-design</apa-reference>
+    <apa-reference>Battelle. (2020). Learning hub. Retrieved April 20, 2021, from https://www.neonscience.org/resources/learning-hub</apa-reference>
+    <apa-reference>Environmental Protection Agency. (2021, April 14). Sources of greenhouse gas emissions. Retrieved April 20, 2021, from https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions</apa-reference>
+    <apa-reference>Hyndman, R.J., & Athanasopoulos, G. (2021) <em>Forecasting: principles and practice</em>, 3rd edition, OTexts: Melbourne, Australia. OTexts.com/fpp3.</apa-reference>
+    <apa-reference>Lunch, C. K., & Jones, M. A. (2021, April 8). Use the neonutilities package to access neon data. Retrieved April 20, 2021, from https://www.neonscience.org/resources/learning-hub/tutorials/neondatastackr</apa-reference>
+    <apa-reference>NEON (National Ecological Observatory Network). Utqiaġvik NEON / BARR. Retrieved April 19, 2021, from https://www.neonscience.org/field-sites/barr </apa-reference>
+    <apa-reference>NEON (National Ecological Observatory Network). Explore Data Products. Retrieved April 19, 2021, from https://data.neonscience.org/data-products/explore</apa-reference>
+    <apa-reference>NEON (National Ecological Observatory Network). Soil CO2 concentration (DP1.00095.001). Retrieved April 19, 2021, from https://data.neonscience.org</apa-reference>
+    <apa-reference>NEON (National Ecological Observatory Network). Soil temperature (DP1.00041.001). Retrieved April 19, 2021, from https://data.neonscience.org </apa-reference>
+    <apa-reference>NEON (National Ecological Observatory Network). Soil water content and water salinity (DP1.00094.001). Retrieved April 19, 2021, from https://data.neonscience.org</apa-reference>
+    <apa-reference>Schaefer, K. (n.d.). National snow and Ice data center. Retrieved April 20, 2021, from https://nsidc.org/cryosphere/frozenground/methane.html</apa-reference>
+
 
   </main>
 </template>
@@ -383,6 +362,16 @@ p {
 }
 
 p > span {
+  font-style: italic;
+  background-color: #f8f8f8;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 0 1px;
+  font-size: 0.88rem;
+}
+
+span {
   font-style: italic;
   background-color: #f8f8f8;
   border: solid 1px #ddd;
@@ -447,5 +436,11 @@ figcaption {
   margin-top: 0.5rem;
 }
 
+apa-reference {
+    padding-left: 250px;
+    padding-right: 300px;
+    text-indent: -36px;
+    padding-bottom: 15px;
+}
 
 </style>

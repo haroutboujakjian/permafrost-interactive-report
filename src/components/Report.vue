@@ -52,7 +52,10 @@
     <h3>Leveraged Data Sets</h3>
     <figure>
       <DataProductsTable/>
-      <figcaption>Table 1: The three data products used in the analysis.</figcaption>
+      <figcaption>
+        Table 1: The three data products used in the analysis: soil CO<sub>2</sub> concentration, soil
+        temperature, and soil water content and salinity.
+      </figcaption>
     </figure>
 
     <h2>Data Preprocessing</h2>
@@ -164,7 +167,9 @@
     <SensorDepths id="figure7" class="graphicContainer"></SensorDepths>
     <small>Figure 7: Soil CO<sub>2</sub> concentration at different sensor depths, aggregated across horizontal
       positions. Deeper sensors exhibit larger and more volatile values where as sensors as shallower depths are
-      smaller and less volatile. Click <font-awesome-icon icon="hand-pointer"></font-awesome-icon> on the text next
+      smaller and less volatile. Click
+      <font-awesome-icon icon="hand-pointer"></font-awesome-icon>
+      on the text next
       to the sensor to add or remove specific depths from the plots.
     </small>
 

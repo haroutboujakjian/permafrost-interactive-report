@@ -26,15 +26,8 @@
         <a href="https://data.neonscience.org/data-products/DP1.00041.001" target="_blank">
           Soil temperature</a>
       </td>
-      <td>
-        Soil temperature is measured up to 3m deep for the Alaskan permafrost
-        sites and is important in understanding when permafrost begins to melt.
-      </td>
-      <td>
-        Demonstrates a data product that is very associated with soil CO<sub>2</sub> concentration.
-        Changes to soil temperature are known to have sort of association to soil CO<sub>2</sub> concentration,
-        especially in these permafrost sites.
-      </td>
+      <td>Temperature of the soil at various depth below the soil surface from 2 cm up to 200 cm.</td>
+      <td>A data product that is very associated with soil CO<sub>2</sub> concentration.</td>
     </tr>
     <tr>
       <td>
@@ -42,12 +35,11 @@
           Soil water content and salinity</a>
       </td>
       <td>
-        Water salinity informs when
-        water turns to ice or vice versa, and typically more water content is strongly associated with plants and
-        organisms in the soil.
+        Soil volumetric water content and an index of salinity at various depth below the soil surface from 2 cm up to
+        200 cm.
       </td>
       <td>
-        Measured the same as soil temperature – up to 3m below the surface of the earth.
+
       </td>
     </tr>
     </tbody>

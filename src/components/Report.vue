@@ -30,18 +30,6 @@
       </li>
     </ul>
 
-    <p>
-      The <a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a>
-      is a country-wide, open-source ecological data repository. Data
-      collection sites are located in the tropical forests of Hawaii, on both sides of the Rocky Mountains, in the
-      glades of Florida, and (notably for this work) in several permafrost locations in Alaska. Sites are either aquatic
-      or terrestrial. Sites are also designated as core or relocatable, meaning that they are fixed or move around a
-      small area over the 30-year data collection period. As much as possible, these different types of sites are
-      located near each other to examine how different types of substrates absorb nutrients and other molecules. The
-      primary mission of collecting NEON data is to support a “greater understanding of ecological change and enables
-      forecasting of future ecological conditions” (Battelle, 2021).
-    </p>
-
     <h3>Description</h3>
     <p>
       The data repository is broken down into “Data Products”; these are individual (or sometimes groups of) features

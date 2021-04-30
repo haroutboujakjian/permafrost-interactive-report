@@ -31,22 +31,23 @@
     </ul>
 
     <h3>Description</h3>
-    <p>
-      The data repository is broken down into “Data Products”; these are individual (or sometimes groups of) features
-      that are collected across several sites. As of April 2021, there are
-      <a href="https://data.neonscience.org/data-products/explore" target="_blank">181 data products</a> spanning 81
-      sites, though at some of the Alaskan permafrost sites, there are over 100 different data products.
-    </p>
+    <ul>
+      <li>The data repository is broken down into “Data Products”; these are individual (or sometimes groups of)
+        features that are collected across several sites.
+      </li>
+      <li>As of April 2021, there are
+        <a href="https://data.neonscience.org/data-products/explore" target="_blank">181 data products</a> spanning 81
+        sites.
+      </li>
+      <li>All of the data products report findings are aggregated over 1 minute or 30 minutes.</li>
+      <li>
+        Values report are <span>minimum</span>, <span>mean</span>, <span>maximum</span>,
+        <span>variance</span>, <span>number of observations</span>, <span>expected uncertainty</span>,
+        <span>standard error of the mean</span>, <span>finalQF</span>, <span>start time</span> and
+        <span>end time</span> of each aggregation are also recorded.
+      </li>
+    </ul>
 
-    <p>
-      All of the data products report findings are aggregated over 1 minute or 30 minutes. When aggregating the values
-      from the sensors, they report the <span>minimum</span>, <span>mean</span>, <span>maximum</span>,
-      <span>variance</span>, <span>number of observations</span>, <span>expected uncertainty</span>,
-      <span>standard error of the mean</span>, and a <span>final quality</span> field over a collection interval. The
-      final quality field records if a sensor error occurred over a given interval. Depending on the data product,
-      this field can be very important to filter the data on. The <span>start time</span> and <span>end time</span>
-      of each aggregation are also recorded.
-    </p>
 
     <h3>Leveraged Data Sets</h3>
     <figure>

@@ -19,12 +19,15 @@
     <h2>Data</h2>
 
     <ul>
-      <li><a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a> 
-          is a country-wide, open-source ecological data repository.</li>
+      <li><a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a>
+        is a country-wide, open-source ecological data repository.
+      </li>
       <li>Collection sites are located in the tropical forests of Hawaii, on both sides of the Rocky Mountains,
-          in the glades of Florida, and (notably for this work) in several permafrost locations in Alaska.</li>
-      <li>Funded by National Science Foundation to support a “greater understanding of ecological change 
-          [that] enables forecasting of future ecological conditions” (Battelle, 2021).”</li>
+        in the glades of Florida, and (notably for this work) in several permafrost locations in Alaska.
+      </li>
+      <li>Funded by National Science Foundation to support a “greater understanding of ecological change
+        [that] enables forecasting of future ecological conditions” (Battelle, 2021).”
+      </li>
     </ul>
 
     <p>
@@ -66,33 +69,35 @@
     <h2>Data Preprocessing</h2>
 
     <h3>How we selected the BONA, DEJU, and HEAL sites?</h3>
-    <p>
-      Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites in
-      Alaska. The map shows the locations of each of the sites, and the line chart shows mean CO<sub>2</sub>
-      concentration level per week for each site. Observing the line chart, there are some apparent trends when
-      comparing soil CO<sub>2</sub> concentration levels at each site.
-    </p>
-    <p>
-      The BARR site is the NEON Program's northernmost field site near Utqiaġvik, Alaska (which used to be known as
-      Barrow). It appears to have the highest spikes in soil CO<sub>2</sub>
-      concentration. The NEON group describes the climate at the BARR sites as having
-      "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic Ocean; and extreme seasonal
-      variation."<sup><a href="https://www.neonscience.org/field-sites/barr" target="_blank">[1]</a></sup>
-      This may explain the large spikes in Soil CO<sub>2</sub>.
-      Both the BARR and TOOL sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the border of the
-      taiga and tundra lines. Climate at the TOOL site is also described similarly as BARR, but the Soil CO<sub>2</sub>
-      does not have outliers quite as large.
-    </p>
-    <p>
-      On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, experience the same
-      typified cold winters and short summers, but without the extreme seasonal variation of the tundra sites. Observing
-      the line plot, the 3 central sites have similar soil CO<sub>2</sub> concentration trends without the large peaks
-      and don't have gaps of missing data as large as the tundra sites.
-    </p>
+    <ul>
+      <li>Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites
+        in Alaska.
+      </li>
+      <li>Both the BARR and TOOL sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the border of the
+        taiga and tundra lines.
+      </li>
+      <li>
+        BARR is the NEON Program's northernmost field site near Utqiaġvik, Alaska (used to be known as Barrow).
+        Described as having "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic
+        Ocean; and extreme seasonal variation."
+        <sup><a href="https://www.neonscience.org/field-sites/barr" target="_blank">[1]</a></sup>
+      </li>
+
+      <li>
+        Climate at the TOOL site is also described similarly as BARR, but the Soil
+        CO<sub>2</sub>
+        does not have outliers quite as large.
+      </li>
+      <li>
+        On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, experience the same
+        typified cold winters and short summers, but without the extreme seasonal variation of the tundra sites.
+      </li>
+    </ul>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
     <small>
       Figure 2: Mean CO<sub>2</sub> values for each of the fives in Alaska. Click
-      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon> the points on the map to
+      <font-awesome-icon icon="mouse-pointer" class="faIcon"></font-awesome-icon>
+      the points on the map to
       select/deselect specific sites from the line chart, and use the start and end date inputs to render different
       time durations.
     </small>
@@ -203,7 +208,7 @@
 
     <figure>
       <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 5: </figcaption>
+      <figcaption>Figure 5:</figcaption>
     </figure>
 
     <p>
@@ -237,7 +242,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 6: </figcaption>
+      <figcaption>Figure 6:</figcaption>
     </figure>
 
     <p>
@@ -247,7 +252,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 7: </figcaption>
+      <figcaption>Figure 7:</figcaption>
     </figure>
 
     <p>
@@ -269,7 +274,7 @@
 
     <figure>
       <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
-      <figcaption>Figure 8: </figcaption>
+      <figcaption>Figure 8:</figcaption>
     </figure>
 
     <p>
@@ -283,7 +288,7 @@
 
     <figure>
       <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
-      <figcaption>Figure 9: </figcaption>
+      <figcaption>Figure 9:</figcaption>
     </figure>
 
     <p>
@@ -382,7 +387,7 @@ p > span {
 }
 
 ul {
-   width: var(--main-width);
+  width: var(--main-width);
   color: #3e3e3e;
   align-self: center;
   font-size: 0.93rem;

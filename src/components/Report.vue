@@ -101,22 +101,40 @@
       attached in any data download. In some cases, observations that do not pass the quality check appear very
       different from data that does pass the quality field.
     </p>
-    <p>
-      In the plots below, the interactive slider changes the threshold for <span>residual.for.outlier</span> /
-      <span>residual.IQR.for.outlier</span>, which is used in the filter for removing outliers (along with
-      <span>finalQF</span>).
-      The slider is programmed to go through five values (these were chosen to show large outlier removal):
-      <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
-      Decreasing the threshold from 500 to 400 shows a large outlier getting removed from BONA in May 2020. However,
-      consistently decreasing this threshold doesn't help determine the optimal value. Going from a threshold 200 to 16,
-      we see an outlier get removed from February 2018 for the HEAL site, but continuing to decrease it from 16 to 3
-      the forced a different outlier back.
-    </p>
+    
+    <ul>
+      <li><span>finalQF</span> field indicates whether a measurement has passed or failed an overall quality assessment.</li>
+      <li>Measurements that fail a quality assessment can still be useful in many circumstances but are sometimes unusable
+          (see figures 3 and 4).</li>
+      <li>Detailed information about quality assessments can be found in 
+          <a href="https://data.neonscience.org/api/v0/documents/NEON.DOC.001113vB"
+             rel="noreferrer noopener" target="_blank">NEON.DOC.001113 document</a> 
+          (attached to any data product download).</li>
+    </ul>
+    
+    <figure>
+      <img src="../assets/finalqfgood.png" alt="Reasonable Soil CO2 values with quality check failures." loading="lazy">
+      <figcaption>Figure 3: Soil CO2 Concentration at site HEAL in June of 2018. Most of the plot shows that the sensor raised a
+                  quality flag (green background), yet the data still appear reasonable. (NEON, Soil CO2, 2021).</figcaption>
+    </figure>
+    
+    <figure>
+      <img src="../assets/finalqfbad.png" alt="Unreasonable Soil temperature values with quality check failures." loading="lazy">
+      <figcaption>Figure 4: Soil temperature at site DEJU from 2017 to 2021. A span of a few months in late 2018 fails a 
+                  quality check and reported values that are clearly unreasonable. (NEON, Soil temperature, 2021).</figcaption>
+    </figure>
+    
+    <ul>
+      <li>Figure 5 shows another way to filter outlier/bad values by large ratios of residual to IQR values.</li>
+      <li>Large values do not eliminate large outliers while small values exclude reasonable measurements.</li>      
+    </ul>
+    
     <SiteThreshold class="graphicContainer"></SiteThreshold>
-    <small>Figure 3:
+    <small>Figure 5:
       Mean CO<sub>2</sub> values for BONA and HEAL sites. The interactive slider changes the threshold for
       <span>residual.for.outlier</span> / <span>residual.IQR.for.outlier</span>, which is used as a filter criteria to
-      remove outliers.
+      remove outliers. The slider is programmed to go through five values (these were chosen to show large outlier removal):
+      <span>500</span>, <span>400</span>, <span>200</span>, <span>16</span>, and <span>3</span>.
     </small>
 
     <h3>How do we use various sensor positions?</h3>
@@ -153,8 +171,8 @@
       meaningfully different measurements, whereas different levels of horizontal position can provide replicates
       relative to one vertical position.
     </p>
-    <SensorDepths id="figure4" class="graphicContainer"></SensorDepths>
-    <small>Figure 4: </small>
+    <SensorDepths id="figure6" class="graphicContainer"></SensorDepths>
+    <small>Figure 6: </small>
 
     <h3>How do we re-index to the best time scale?</h3>
     <p>
@@ -173,7 +191,7 @@
     <p>
       Another reason to consider re-indexing is for computational cost. Many of the visualizations in the interactive
       report are designed to react in real-time, and they show insights into how decisions were made in preprocessing
-      and modeling. In some multiplot visualizations (Figure 2 and 4), a daily re-indexing can still produce too much
+      and modeling. In some multiplot visualizations (Figure 2 and 6), a daily re-indexing can still produce too much
       data to filter and replot in real-time. For these cases, a weekly index is used. Similar issues can occur with
       more complex models, or if more covariates are added to models in the following section.
     </p>
@@ -196,7 +214,7 @@
 
     <figure>
       <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 5:</figcaption>
+      <figcaption>Figure 7: </figcaption>
     </figure>
 
     <p>
@@ -230,7 +248,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 6:</figcaption>
+      <figcaption>Figure 8: </figcaption>
     </figure>
 
     <p>
@@ -240,7 +258,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 7:</figcaption>
+      <figcaption>Figure 9: </figcaption>
     </figure>
 
     <p>
@@ -262,7 +280,7 @@
 
     <figure>
       <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
-      <figcaption>Figure 8:</figcaption>
+      <figcaption>Figure 10: </figcaption>
     </figure>
 
     <p>
@@ -276,7 +294,7 @@
 
     <figure>
       <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
-      <figcaption>Figure 9:</figcaption>
+      <figcaption>Figure 11: </figcaption>
     </figure>
 
     <p>
@@ -304,7 +322,7 @@
 
     <h2>Regression Analysis</h2>
     <ACF class="graphicContainer"></ACF>
-    <small>Figure 10: </small>
+    <small>Figure 12: </small>
 
     <h3>Ordinary Least Squares Linear Regression</h3>
     <p>Fill in</p>
@@ -375,7 +393,7 @@ p > span {
 }
 
 ul {
-  width: var(--main-width);
+   width: var(--main-width);
   color: #3e3e3e;
   align-self: center;
   font-size: 0.93rem;

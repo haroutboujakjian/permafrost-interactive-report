@@ -1,10 +1,11 @@
 <template>
   <main>
-    <h2>What is Permafrost?</h2>
+    <h2>Introduction</h2>
     <ul>
       <li>Permafrost is defined as the sublayer of soil that remains below 0&#730;C for two or more years.</li>
-      <li>Understanding the melting of permafrost helps in piecing together the larger global climate change issue.</li>
       <li>This layer above permafrost is the normal soil which melts and freezes based on the season.</li>
+      <li>Permafrost is slowly melting around the world, releasing trapped CO<sub>2</sub></li>
+      <li>Environmental scientists concerned this will accelerate unwanted climate change.</li>
     </ul>
 
     <figure>
@@ -16,6 +17,15 @@
     </figure>
 
     <h2>Data</h2>
+
+    <ul>
+      <li><a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a> 
+          is a country-wide, open-source ecological data repository.</li>
+      <li>Collection sites are located in the tropical forests of Hawaii, on both sides of the Rocky Mountains,
+          in the glades of Florida, and (notably for this work) in several permafrost locations in Alaska.</li>
+      <li>Funded by National Science Foundation to support a “greater understanding of ecological change 
+          [that] enables forecasting of future ecological conditions” (Battelle, 2021).”</li>
+    </ul>
 
     <p>
       The <a href="https://www.neonscience.org/" target="_blank">National Ecological Observatory Network (NEON)</a>

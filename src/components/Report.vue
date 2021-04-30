@@ -1,12 +1,11 @@
 <template>
   <main>
     <h2>What is Permafrost?</h2>
-    <p>
-      Understanding the melting of permafrost helps in piecing together the larger global climate change issue.
-      Permafrost is defined as the sublayer of soil that remains below 0&#730;C for two or more years. Figure 1
-      depicts what permafrost commonly looks like, as well as showing the active layer. This layer above permafrost
-      is the normal soil which melts and freezes based on the season.
-    </p>
+    <ul>
+      <li>Permafrost is defined as the sublayer of soil that remains below 0&#730;C for two or more years.</li>
+      <li>Understanding the melting of permafrost helps in piecing together the larger global climate change issue.</li>
+      <li>This layer above permafrost is the normal soil which melts and freezes based on the season.</li>
+    </ul>
 
     <figure>
       <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
@@ -194,6 +193,7 @@
 
     <figure>
       <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
+      <figcaption>Figure 5: </figcaption>
     </figure>
 
     <p>
@@ -227,6 +227,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_501.png" alt="STL Decomposition for BONA" loading="lazy">
+      <figcaption>Figure 6: </figcaption>
     </figure>
 
     <p>
@@ -236,6 +237,7 @@
 
     <figure>
       <img src="../assets/STL_BONA_503.png" alt="STL Decomposition for BONA" loading="lazy">
+      <figcaption>Figure 7: </figcaption>
     </figure>
 
     <p>
@@ -257,6 +259,7 @@
 
     <figure>
       <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
+      <figcaption>Figure 8: </figcaption>
     </figure>
 
     <p>
@@ -270,6 +273,7 @@
 
     <figure>
       <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
+      <figcaption>Figure 9: </figcaption>
     </figure>
 
     <p>
@@ -297,7 +301,7 @@
 
     <h2>Regression Analysis</h2>
     <ACF class="graphicContainer"></ACF>
-    <small>Figure ?: </small>
+    <small>Figure 10: </small>
 
     <h3>Ordinary Least Squares Linear Regression</h3>
     <p>Fill in</p>
@@ -365,6 +369,18 @@ p > span {
   padding: 0 3px;
   margin: 0 1px;
   font-size: 0.88rem;
+}
+
+ul {
+   width: var(--main-width);
+  color: #3e3e3e;
+  align-self: center;
+  font-size: 0.93rem;
+}
+
+ul li {
+  list-style-type: circle;
+  margin: 1rem 1rem;
 }
 
 .faIcon {

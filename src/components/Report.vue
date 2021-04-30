@@ -334,8 +334,8 @@
       <li>Developed data product preprocessing framework.</li>
       <li>Demonstrated why time-series modeled are needed.</li>
       <li>Verified association between soil temperature and CO<sub>2</sub> contentration.</li>
+      <li><em>NEON data is big and messy, but can provide insights to important environmental problems.</em></li>
     </ul>
-    <p><b>NEON data is big and messy, but can provide insights to important environmental problems.</b></p>
 
     <h2>Works Cited</h2>
 
@@ -479,7 +479,7 @@ small {
 
 figure {
   width: var(--main-width);
-  margin: 1rem auto 0;
+  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
 }

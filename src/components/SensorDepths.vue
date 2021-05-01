@@ -1,6 +1,7 @@
 <template>
   <section class="sensorDepthsSection">
     <div class="legendContainer">
+      <h4 class="sensorDepthsHeader">Sensor Depths</h4>
       <BaseLegend :legend-data="legendData"></BaseLegend>
     </div>
 
@@ -14,21 +15,21 @@
       <div class="depthColumn" ref="sensorChartContainer">
         <h4>BONA</h4>
         <LineChart :plot-data="sensor_depths_split.BONA" x_key="week"
-                   :width="width" :height="height - 35" :margin="margin" :colors="color"
+                   :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
                    :y-axis-max="8000">
         </LineChart>
 
         <h4>DEJU</h4>
         <LineChart :plot-data="sensor_depths_split.DEJU" x_key="week"
-                   :width="width" :height="height - 35" :margin="margin" :colors="color"
+                   :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
                    :y-axis-max="8000">
         </LineChart>
 
         <h4>HEAL</h4>
         <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
-                   :width="width" :height="height - 35" :margin="margin" :colors="color"
+                   :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
                    :y-axis-max="8000">
         </LineChart>
@@ -79,7 +80,7 @@ export default {
       return {BONA, DEJU, HEAL}
     },
     legendData() {
-      const verPos = ["501", "502", "503"]
+      const verPos = ["Shallow (501)", "Intermediate (502)", "Deep (503)"]
       return this.color.map((color, i) => ({name: verPos[i], color}))
     }
   },
@@ -142,6 +143,7 @@ export default {
 
 .depthColumn:last-child {
   width: calc(100% - 270px);
+  padding-top: 1.5rem;
 }
 
 h4 {
@@ -154,4 +156,8 @@ h4 {
   color: var(--main-color);
 }
 
+.sensorDepthsHeader {
+  font-size: 1.2rem;
+  justify-content: flex-start;
+}
 </style>

@@ -38,7 +38,6 @@
         <th></th>
         <th>Estimate</th>
         <th>Std. Error</th>
-        <th>t-statistic</th>
         <th>p-value</th>
       </tr>
       </thead>
@@ -47,7 +46,6 @@
         <td>{{values.type}}</td>
         <td>{{values.Estimate}}</td>
         <td>{{values.err}}</td>
-        <td>{{values.tVal}}</td>
         <td>{{values.pVal}}</td>
       </tr>
       </tbody>

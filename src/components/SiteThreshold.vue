@@ -81,7 +81,7 @@ export default {
   align-self: center;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 85vh;
   margin: 3rem 0 2rem;
   padding: 2rem 2rem 1rem;
 }

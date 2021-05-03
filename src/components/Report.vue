@@ -4,12 +4,13 @@
     <ul>
       <li>Permafrost is defined as the sublayer of soil that remains below 0&#730;C for two or more years.</li>
       <li>This layer above permafrost is the normal soil which melts and freezes based on the season.</li>
-      <li>Permafrost is slowly melting around the world, releasing trapped CO<sub>2</sub></li>
+      <li>Permafrost is slowly melting around the world, releasing trapped CO<sub>2</sub>.</li>
       <li>Environmental scientists concerned this will accelerate unwanted climate change.</li>
     </ul>
 
     <figure>
-      <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer">
+      <img src="../assets/permafrost2.png" alt="Image showing difference in permafrost and active layer"
+           class="permafrostImg">
       <figcaption>
         Figure 1: The active layer freezes and melts based on the season while the permafrost below it stays frozen
         all year long.
@@ -26,7 +27,7 @@
         in the glades of Florida, and (notably for this work) in several permafrost locations in Alaska.
       </li>
       <li>Funded by National Science Foundation to support a “greater understanding of ecological change
-        [that] enables forecasting of future ecological conditions” (Battelle, 2021).”
+        [that] enables forecasting of future ecological conditions” (Battelle, 2021).
       </li>
     </ul>
 
@@ -65,23 +66,23 @@
       <li>Soil CO<sub>2</sub> contentration fluctuates at the 5 different National Ecological Observatory Network sites
         in Alaska.
       </li>
-      <li>Both the BARR and TOOL sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the border of the
-        taiga and tundra lines.
-      </li>
       <li>
         BARR is the NEON Program's northernmost field site near Utqiaġvik, Alaska (used to be known as Barrow).
         Described as having "long, cold winters; short, cool summers; persistent wind driven by the nearby Arctic
         Ocean; and extreme seasonal variation" (NEON, Utqiaġvik, 2021).
       </li>
-
-      <li>
-        Climate at the TOOL site is also described similarly as BARR, but the Soil
-        CO<sub>2</sub>
-        does not have outliers quite as large.
+      <li>Both the BARR and TOOLIK (TOOL) sites are in the NEON Tundra Domain (D18), but the TOOL site sits at the
+        border of the
+        taiga and tundra lines.
       </li>
       <li>
-        On the other hand, the 3 sites clustered in the middle of Alaska, BONA, DEJU, and HEAL, experience the same
-        typified cold winters and short summers, but without the extreme seasonal variation of the tundra sites.
+        Climate at the TOOL site is also described similarly as BARR, but the Soil CO<sub>2</sub> does not have
+        outliers quite as large.
+      </li>
+      <li>
+        On the other hand, the 3 sites clustered in the middle of Alaska, Caribou-Poker Creeks Research Watershed
+        (BONA), Delta Junciton (DEJU), and HEALY (HEAL), experience the same typified cold winters and short summers,
+        but without the extreme seasonal variation of the tundra sites.
       </li>
     </ul>
     <AllSitesMapTimeSeries class="graphicContainer"></AllSitesMapTimeSeries>
@@ -183,11 +184,13 @@
     <h2>Seasonality and Trend Analysis</h2>
 
     <h3>Raw Data</h3>
-    
+
     <figure>
       <img src="../assets/bona-raw.png" alt="Soil CO2 concentration at BONA site, all sensors, by day"
            loading="lazy">
-      <figcaption>Figure 8: Mean soil CO<sub>2</sub> concentration from all sensors at BONA site, by day. The gaps in summer of 2018 and fall of 2020 represent missing observations. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration values after the estimated trend and seasonal components have been removed. The vertical bar in each row is included for reference of scale. The height of the vertical bar represents the same difference in soil CO2 concentration, plotted at the various scales of each row.</figcaption>
+      <figcaption>Figure 8: Mean soil CO<sub>2</sub> concentration from all sensors at BONA site, by day. The gaps in
+        summer of 2018 and fall of 2020 represent missing observations.
+      </figcaption>
     </figure>
 
     <ul>
@@ -204,7 +207,7 @@
     </ul>
 
     <h3>Autoregressive Integrated Moving Average (ARIMA)</h3>
-    
+
     <ul>
       <li>Linear combination of preceding values ("autoregressive")</li>
       <li>Linear combination of preceding forecast errors ("moving average")</li>
@@ -215,10 +218,17 @@
     </ul>
 
     <h3>Intepretation of Results</h3>
-    
+
     <figure>
       <img src="../assets/STL_BONA.png" alt="STL Decomposition for BONA" loading="lazy">
-      <figcaption>Figure 9: A plot of soil CO2 concentration at the BONA site as decomposed by STL. The scale of the y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration values after the estimated trend and seasonal components have been removed. The vertical bar in each row is included for reference of scale. The height of the vertical bar represents the same difference in soil CO2 concentration, plotted at the various scales of each row.</figcaption>
+      <figcaption>Figure 9: A plot of soil CO2 concentration at the BONA site as decomposed by STL. The scale of the
+        y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing
+        values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend
+        Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration
+        values after the estimated trend and seasonal components have been removed. The vertical bar in each row is
+        included for reference of scale. The height of the vertical bar represents the same difference in soil CO2
+        concentration, plotted at the various scales of each row.
+      </figcaption>
     </figure>
 
     <ul>
@@ -229,9 +239,16 @@
 
     <figure>
       <img src="../assets/STL_DEJU.png" alt="STL Decomposition for DEJU" loading="lazy">
-      <figcaption>Figure 10: A plot of soil CO2 concentration at the DEJU site as decomposed by STL. The scale of the y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration values after the estimated trend and seasonal components have been removed. The vertical bar in each row is included for reference of scale. The height of the vertical bar represents the same difference in soil CO2 concentration, plotted at the various scales of each row.</figcaption>
+      <figcaption>Figure 10: A plot of soil CO2 concentration at the DEJU site as decomposed by STL. The scale of the
+        y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing
+        values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend
+        Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration
+        values after the estimated trend and seasonal components have been removed. The vertical bar in each row is
+        included for reference of scale. The height of the vertical bar represents the same difference in soil CO2
+        concentration, plotted at the various scales of each row.
+      </figcaption>
     </figure>
-    
+
     <ul>
       <li>Similar as to BONA</li>
       <li>Pronounced seasonality</li>
@@ -240,9 +257,16 @@
 
     <figure>
       <img src="../assets/STL_HEAL.png" alt="STL Decomposition for HEAL" loading="lazy">
-      <figcaption>Figure 11: A plot of soil CO2 concentration at the HEAL site as decomposed by STL. The scale of the y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration values after the estimated trend and seasonal components have been removed. The vertical bar in each row is included for reference of scale. The height of the vertical bar represents the same difference in soil CO2 concentration, plotted at the various scales of each row.</figcaption>
+      <figcaption>Figure 11: A plot of soil CO2 concentration at the HEAL site as decomposed by STL. The scale of the
+        y-axis of each row differs. "Raw Observations" contains the soil CO2 concentration at the BONA site with missing
+        values filled in via interpolation. The trend and seasonality inferred by STL are illustrated in the "Trend
+        Component" and "Seasonal Component" rows, respectively. The "Remainder" row contains the soil CO2 concentration
+        values after the estimated trend and seasonal components have been removed. The vertical bar in each row is
+        included for reference of scale. The height of the vertical bar represents the same difference in soil CO2
+        concentration, plotted at the various scales of each row.
+      </figcaption>
     </figure>
-    
+
     <ul>
       <li>Less consistent seasonality from year to year</li>
     </ul>
@@ -257,37 +281,41 @@
     </ul>
 
     <ACF class="graphicContainer"></ACF>
-    <small>Figure 12: Plot of autocorrelation by lag in residuals from fits to various linear models, up to lag of 375 days. "Linear" refers to an ordinary linear regression model. "Fourier" refers to a linear regression model with errors modeled by an ARIMA process with Fourier terms for seasonality. "Seasonal" refers to a linear regression model with errors modeled by a seasonal ARIMA process. "Adjusted" refers to a linear regression model with errors modeled by a seasonal ARIMA process fitted to seasonally adjusted data.</small>
+    <small>Figure 12: Plot of autocorrelation by lag in residuals from fits to various linear models, up to lag of 375
+      days. "Linear" refers to an ordinary linear regression model. "Fourier" refers to a linear regression model with
+      errors modeled by an ARIMA process with Fourier terms for seasonality. "Seasonal" refers to a linear regression
+      model with errors modeled by a seasonal ARIMA process. "Adjusted" refers to a linear regression model with errors
+      modeled by a seasonal ARIMA process fitted to seasonally adjusted data.</small>
 
     <h3>Inaccuracies due to Autocorrelation</h3>
-    
+
     <ul>
-        <li>Parameter estimates</li>
-        <li>Standard errors of estimates</li>
-        <li>Hypothesis tests on estimates</li>
+      <li>Parameter estimates</li>
+      <li>Standard errors of estimates</li>
+      <li>Hypothesis tests on estimates</li>
     </ul>
 
     <h3>Regression with ARIMA Errors</h3>
 
     <ul>
-        <li>Regression error term replaced by ARIMA model</li>
-        <li>Long-period seasonality</li>
-        <li>Harmonic Fourier terms</li>
+      <li>Regression error term replaced by ARIMA model</li>
+      <li>Long-period seasonality</li>
+      <li>Harmonic Fourier terms</li>
     </ul>
 
     <h3>Using Seasonally Adjusted Data</h3>
-    
+
     <ul>
-        <li>Similar fit with example</li>
-        <li>Might introduce bias</li>
-        <li>Requires more steps</li>
+      <li>Similar fit with example</li>
+      <li>Might introduce bias</li>
+      <li>Requires more steps</li>
     </ul>
 
     <h2>Conclusions</h2>
     <ul>
       <li>Developed data product preprocessing framework.</li>
       <li>Demonstrated why time-series modeled are needed.</li>
-      <li>Verified association between soil temperature and CO<sub>2</sub> contentration.</li>
+      <li>Verified association between soil temperature and CO<sub>2</sub> concentration.</li>
       <li><em>NEON data is big and messy, but can provide insights to important environmental problems.</em></li>
     </ul>
 
@@ -439,7 +467,6 @@ figure {
 }
 
 figure img {
-  width: clamp(450px, 80%, 680px);
   align-self: center;
 }
 
@@ -447,6 +474,10 @@ figcaption {
   font-size: 0.82rem;
   font-style: italic;
   margin-top: 0.5rem;
+}
+
+.permafrostImg {
+  width: clamp(450px, 80%, 700px);
 }
 
 </style>

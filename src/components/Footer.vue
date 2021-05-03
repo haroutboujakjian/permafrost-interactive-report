@@ -4,7 +4,7 @@
       Find source code and data on
       <a href="https://github.com/haroutboujakjian/permafrost-interactive-report"
          target="_blank" rel="noreferrer noopener">
-        <GithubIcon></GithubIcon>
+        <GithubIcon></GithubIcon>.
       </a>
     </small>
   </footer>

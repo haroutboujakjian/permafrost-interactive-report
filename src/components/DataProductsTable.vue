@@ -39,7 +39,7 @@
         200 cm.
       </td>
       <td>
-
+        Important factors to hydrologic cycle that soil organisms rely on to get water.
       </td>
     </tr>
     </tbody>

@@ -75,6 +75,12 @@ export default {
       default: function () {
         return {dx: -25, dy: 60,}
       }
+    },
+    xAxisMin: {
+      type: Date
+    },
+    xAxisMax: {
+      type: Date
     }
   },
   data() {
@@ -104,8 +110,11 @@ export default {
       return max(this.y_values, d => max(d.values))
     },
     xScale() {
+      const x_extent = this.xAxisMin && this.xAxisMax
+          ? [this.xAxisMin, this.xAxisMax]
+          : extent(this.plotData, d => new Date(d[this.x_key]))
       return scaleTime()
-          .domain(extent(this.plotData, d => new Date(d[this.x_key])))
+          .domain(x_extent)
           .range([this.margin.left, this.width - this.margin.right])
           .nice()
     },

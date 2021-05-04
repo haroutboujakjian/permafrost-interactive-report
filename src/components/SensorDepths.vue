@@ -17,6 +17,7 @@
         <LineChart :plot-data="sensor_depths_split.BONA" x_key="week"
                    :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :x-axis-min="new Date(2017, 1, 1)" :x-axis-max="new Date(2021, 3, 0)"
                    :y-axis-max="8000">
         </LineChart>
 
@@ -24,6 +25,7 @@
         <LineChart :plot-data="sensor_depths_split.DEJU" x_key="week"
                    :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :x-axis-min="new Date(2017, 1, 1)" :x-axis-max="new Date(2021, 3, 0)"
                    :y-axis-max="8000">
         </LineChart>
 
@@ -31,6 +33,7 @@
         <LineChart :plot-data="sensor_depths_split.HEAL" x_key="week"
                    :width="width" :height="height - 40" :margin="margin" :colors="color"
                    xaxis-label="ppm CO2" :inactive-lines="inactiveSensorDepths"
+                   :x-axis-min="new Date(2017, 1, 1)" :x-axis-max="new Date(2021, 3, 0)"
                    :y-axis-max="8000">
         </LineChart>
       </div>

@@ -14,7 +14,8 @@
                  :plot-data="plotDataFilter" :x_key="'endWeek'" :xaxis-label="'ppm CO2'"
                  :colors="colors" :inactive-lines="inactiveSiteIDs">
       </LineChart>
-      <Choropleth :width="chartSizes.map.width" :height="chartSizes.map.height" :color-scale="colorScale"
+      <Choropleth v-if="chartSizes.map.width"
+                  :width="chartSizes.map.width" :height="chartSizes.map.height" :color-scale="colorScale"
                   :inactive-points="inactiveSiteIDs" @click="addSiteID($event)"
                   class="map">
       </Choropleth>
